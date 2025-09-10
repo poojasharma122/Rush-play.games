@@ -53,8 +53,8 @@
         <div class="container-fluid">
             <div class="header_inner">
                 <div class="header-actions">
-                    <a class="butn" id="login_btn">Login</a>
-                    <a class="butn" id="signup_btn">Sign Up</a>
+                    <a class="custom-btn" id="login_btn">Login</a>
+                    <a class="custom-btn" id="signup_btn">Sign Up</a>
                 </div>
                 <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="color: #fff;">&#9776;</button>
             </div>
@@ -70,7 +70,6 @@
             <div class="container">
             <div class="banner_wrap">
                 <div class="banner_content">
-                    
                     <div class="row g-4 banner_hover_effect">
                         <div class="col-lg-6 col-md-12 col-12" id="bannerTextArea" style="position:relative;z-index:2;">
                             <div class="banner_text">
@@ -84,11 +83,32 @@
                         </div>
                         
                         <div class="col-lg-6 col-md-12 col-12">
-                            <div class="banner_section_second_img">
-                                <img src="assets/images/slider_img01.png" alt="">
+                            <div class="banner_section_second_img" style="position:relative;overflow:visible;">
+                                <img 
+                                    src="assets/images/slider_img01.png" 
+                                    alt="" 
+                                    id="movingBannerImg"
+                                    style="position:relative;animation:moveBannerImg 4s linear infinite;"
+                                >
                             </div>
                         </div>
                     </div>
+                    <style>
+                        @keyframes moveBannerImg {
+                            0% {
+                                left: 0;
+                                transform: translateX(0);
+                            }
+                            50% {
+                                left: 30px;
+                                transform: translateX(30px);
+                            }
+                            100% {
+                                left: 0;
+                                transform: translateX(0);
+                            }
+                        }
+                    </style>
                 </div>
             </div>
         </div>

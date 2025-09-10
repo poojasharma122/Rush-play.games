@@ -264,7 +264,7 @@ ul {
 
 /* Banner CSS Start */
 .banner {
-    height: 50rem;
+    height: 45rem;
     /* background-color: rgba(0 0 0/60%); */
     background-blend-mode: multiply;
     background-position: top center;
@@ -281,7 +281,7 @@ ul {
 
 .banner_content h1 {
     font-size: 3.5rem;
-    color: #fff;
+    color: #45f882;
     line-height: 1.4;
     max-width: 50.625rem;
     letter-spacing: 0.5px;
@@ -326,16 +326,19 @@ span.animated-text span {
 }
 
 .banner_section_second_img img {
-    width: 350px;
-    height: 470px;
+    /* width: 350px; */
+    /* height: 470px; */
+    max-width: 500px;
 }
 
 .banner_content {
     margin-top: 120px;
 }
 
-.banner_text {
-    margin-top: 110px;
+
+
+.row.g-4.banner_hover_effect {
+    align-items: center;
 }
 
 /* Banner CSS Start */
