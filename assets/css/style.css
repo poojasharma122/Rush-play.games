@@ -331,10 +331,9 @@ ul {
 
 .benefits {
     display: grid;
-    grid-template-columns: repeat(3, 1fr)   ;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 63px 1.7rem;
     margin-top: 0;
-    
 }
 
 .benefits-sec {
@@ -368,12 +367,7 @@ ul {
     margin-top: 26px;
 }
 
-.benefit-card p {
-    font-size: 1rem;
-    color: #050517;
-    font-size: 16px;
-    font-weight: 400;
-}
+
 
 .benefit-card figure {
     background: #fff;
