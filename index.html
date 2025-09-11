@@ -29,35 +29,35 @@
     <!-- Header Start -->
     <div class="header-top">
         <div class="container-fluid">
-          <div class="header_inner">
-            <!-- Left: Logo -->
-            <div class="logo">
-              <a href="./"></a>
+            <div class="header_inner">
+                <!-- Left: Logo -->
+                <div class="logo">
+                    <a href="./"></a>
+                </div>
+
+                <!-- Center: Menu -->
+                <div class="sidebar" id="sidebar">
+                    <button class="close-btn" id="closeBtn" aria-label="Close menu">&times;</button>
+                    <ul>
+                        <li><a href="./">Home</a></li>
+                        <li><a href="play">Play</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="rewards">Rewards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right: Buttons + Hamburger -->
+                <div class="header-actions">
+                    <a class="custom-btn" id="login_btn">Login</a>
+                    <a class="custom-btn" id="signup_btn">Sign Up</a>
+                    <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
+                </div>
             </div>
-      
-            <!-- Center: Menu -->
-            <div class="sidebar" id="sidebar">
-              <button class="close-btn" id="closeBtn" aria-label="Close menu">&times;</button>
-              <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="play">Play</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="rewards">Rewards</a></li>
-              </ul>
-            </div>
-      
-            <!-- Right: Buttons + Hamburger -->
-            <div class="header-actions">
-              <a class="custom-btn" id="login_btn">Login</a>
-              <a class="custom-btn" id="signup_btn">Sign Up</a>
-              <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
-            </div>
-          </div>
         </div>
-      </div>
-      
-      
+    </div>
+
+
 
     <!-- Header End -->
     <div class="aoshidden">
@@ -574,7 +574,7 @@
             <section class="rush-edge-section py-5">
                 <div class="container">
                     <div class="rush-edge-heading">
-                        <h2 class="figma_heading">What You’ll Find Inside</h2>
+                        <h2 class="figma_heading text-center">What You’ll Find Inside</h2>
 
                     </div>
                     <div class="benefits">
@@ -614,6 +614,8 @@
             </section>
             <!-- What You’ll Find Inside section start  -->
 
+
+            <!-- Step Into the Action section start -->
             <section class="step-into-action-section py-5">
                 <div class="container">
                     <div class="step-into-action-content">
@@ -621,7 +623,8 @@
                             Step Into the Action
                         </h2>
                         <p class="para step-action-para">
-                            Create your account today, grab your starter tokens, and see how fast the fun moves inside Rush Play.
+                            Create your account today, grab your starter tokens, and see how fast the fun moves inside
+                            Rush Play.
                         </p>
                         <a href="signup" class="custom-btn step-action-btn">
                             Get Started
@@ -629,29 +632,88 @@
                     </div>
                 </div>
             </section>
-            <style>
-                .step-into-action-section {
-                    background-color: #1c1d20;
-                }
-                .step-into-action-content {
-                    text-align: center;
-                    max-width: 700px;
-                    margin: 0 auto;
-                }
-                .step-action-heading {
-                    color: #2eff88;
-                    margin-bottom: 1.5rem;
-                }
-                .step-action-para {
-                    color: #fff;
-                    font-size: 1.25rem;
-                    margin-bottom: 2.5rem;
-                }
-                .step-action-btn {
-                    font-size: 1.2rem;
-                    padding: 16px 48px;
-                }
-            </style>
+            <!-- Step Into the Action section end -->
+
+
+            <!-- newsletter section start -->
+            <section class="newsletter_sec pt-8 pb-8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500">
+                            <div class="titlepage">
+                                <h2 class="figma_heading text-center">Get Updates First</h2>
+                                <span class="underline"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newslettr_wrap text-center aos-init aos-animate" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        <h4>
+                            Subscribe to the Rush Play newsletter for early access to events, new game launches, and
+                            exclusive token drops.
+                        </h4>
+
+                        <p id="email-message" style="color: red; display: none;"></p>
+                        <div class="newsletter_input_box">
+                            <span class="input_msg" style="background-image: url('assets/images/mail.png');">
+                            </span>
+                            <input type="text" id="newsletter-email" placeholder="Enter Your email">
+                        </div>
+
+                        <div class="explore-button">
+                            <button class="custom-btn">Subscribe</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- newsletter section end -->
+
+
+            <!-- faqs section start -->
+            <section class="fqas-section pt-8 pb-8 section-bg">
+                <div class="container">
+                    <div class="ko-container">
+                        <h2 class="figma_heading text-center">FAQ'<span>s</span></h2>
+                        <div class="ko-faq-accordion">
+                            <div class="ko-accordion-item">
+                                <div class="ko-accordion-item-header">Is Rush Play really free?</div>
+                                <div class="ko-accordion-item-body">
+                                    <p class="ko-accordion-item-body-content"> Yes — all games are played with virtual tokens that have no cash value.</p>
+                                </div>
+                            </div>
+                            <div class="ko-accordion-item">
+                                <div class="ko-accordion-item-header">What makes Rush Play different?</div>
+                                <div class="ko-accordion-item-body">
+                                    <p class="ko-accordion-item-body-content"> We focus on speed and instant entertainment. No waiting, no downloads — just play.</p>
+                                </div>
+                            </div>
+                            <div class="ko-accordion-item">
+                                <div class="ko-accordion-item-header">Do I need an account?
+                                </div>
+                                <div class="ko-accordion-item-body">
+                                    <p class="ko-accordion-item-body-content"> Yes, accounts are free to create and give you access to daily rewards and progress tracking.</p>
+                                </div>
+                            </div>
+                            <div class="ko-accordion-item">
+                                <div class="ko-accordion-item-header">Can I win real prizes?
+                                </div>
+                                <div class="ko-accordion-item-body">
+                                    <p class="ko-accordion-item-body-content"> No. Rush Play is entertainment-only. Tokens and rewards cannot be exchanged for money.</p>
+                                </div>
+                            </div>
+                            <div class="ko-accordion-item">
+                                <div class="ko-accordion-item-header">Is there an age restriction?
+                                </div>
+                                <div class="ko-accordion-item-body">
+                                    <p class="ko-accordion-item-body-content"> Yes, you must be 18+ or of legal age in your region to play.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- faqs section end -->
 
 
         </main>

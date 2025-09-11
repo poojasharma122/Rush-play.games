@@ -50,6 +50,10 @@ body {
     color: #45f882;
 }
 
+.section-title span{
+color: #fff;
+}
+
 
 img {
     width: 100%;
@@ -489,3 +493,197 @@ h2.heading-bar {
 
 
 /* the rush play edge section css end */
+
+
+
+/* Step Into the Action section css start */
+
+.step-into-action-section {
+    background-color: #1c1d20;
+}
+.step-into-action-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.step-action-heading {
+    color: #2eff88;
+    margin-bottom: 1.5rem;
+}
+.step-action-para {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+.step-action-btn {
+    font-size: 1.2rem;
+    padding: 16px 48px;
+}
+
+
+/* Step Into the Action section css end */
+
+
+
+/* newsletter section css start */
+
+.newsletter_sec {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0 0 0/80%);
+    background-blend-mode: multiply;
+    background-image: url(../images/footer-img.jpg);
+}
+
+.section_heading {
+    color: #fff;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* .titlepage span.underline {
+    border: #008080 solid 1px;
+    width: 100%;
+    max-width: 24.25rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.newslettr_wrap h4 {
+    font-size: 1.2rem;
+    max-width: 56.25rem;
+    margin: 0 auto 1.25rem auto;
+    color: #fff;
+}
+
+.newsletter_input_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #2eff88;
+    max-width: 37.5rem;
+    margin: 3.125rem auto 1.25rem auto;
+}
+
+.newsletter_input_box input {
+    max-width: 40.625rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0.625rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+span.input_msg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1.5625rem;
+    width: 1.5625rem;
+    margin-right: 10px;
+    display: inline-block;
+    min-width: 1.5625rem;
+}
+
+
+/* newsletter section css end */
+
+
+
+/* faqs section css start */
+
+.ko-faq-section h2 {
+    text-align: center;
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 10px;
+  }
+  .ko-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .ko-faq-section .ko-container > p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  .ko-accordion-item {
+    background-color: #fff;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 15px;
+}
+  .ko-accordion-item-header {
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .ko-accordion-item-header::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url('../images/chevron.png');
+    background-size: cover;
+    transition: all 0.4s ease;
+  }
+  .ko-accordion-item-header.active::after {
+    content: "";
+    transform: rotate(90deg);
+  }
+  .ko-accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  }
+  .ko-accordion-item-body-content {
+    padding-bottom: 20px;
+  }
+  .ko-faq-accordion {
+    margin-bottom: 30px;
+  }
+  .ko-ask-qus h3 {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 10px;
+  }
+  .ko-ask-qus p {
+    margin-bottom: 20px;
+  }
+  .ko-form-cotrl {
+    margin-bottom: 20px;
+  }
+  .ko-faq-input-field {
+    width: 100%;
+    max-width: 520px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #dfdfdf;
+  }
+  .ko-faq-input-field:focus {
+    outline: none;
+    border: 1px solid #aae0ff;
+    box-shadow: 1px 1px 10px #aae0ff;
+  }
+  .ko-btn {
+    border: 0;
+    padding: 6px 12px;
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+/* faqs section css end */
