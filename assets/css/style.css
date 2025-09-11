@@ -82,10 +82,11 @@ ul {
 }
 
 .figma_heading {
-    color: #111111;
-    font-weight: 700;
-    line-height: 3.125rem;
-    font-size: 2.652rem;
+    color: #2eff88;
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 3.652rem;
+    margin-bottom: 30px;
 }
 
 .para {
@@ -150,6 +151,16 @@ ul {
     display: flex;
     align-items: center;
     height: 48px;
+}
+
+.logo a {
+    background-image: url('../images/site-second-logo.png');
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 5.6875rem;
+    width: 12.5rem;
 }
 
 .logo img {
@@ -280,8 +291,8 @@ ul {
 }
 
 .banner_content h1 {
-    font-size: 3.5rem;
-    color: #45f882;
+    font-size: 4.5rem;
+    color: #2eff88;
     line-height: 1.4;
     max-width: 50.625rem;
     letter-spacing: 0.5px;
@@ -299,36 +310,12 @@ ul {
     line-height: 1.5;
 }
 
-.animated-text {
-    display: inline-block;
-    position: relative;
-    text-transform: none;
-}
 
-.animated-text span {
-    opacity: 0;
-    animation: fadeIn 0.6s forwards ease-in;
-    color: #fcee0a;
-}
-
-span.animated-text span {
-    letter-spacing: -12px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 
 .banner_section_second_img img {
     /* width: 350px; */
     /* height: 470px; */
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .banner_content {
