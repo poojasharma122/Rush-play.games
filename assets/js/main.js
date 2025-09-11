@@ -51,3 +51,15 @@ AOS.init({
     duration: 1200,
 });
 // AOS JS End
+
+
+// cursor js start
+
+$(window).mousemove(function (e) {
+	$(".ring").css(
+		"transform",
+		`translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`
+	);
+});
+
+// cursor js end

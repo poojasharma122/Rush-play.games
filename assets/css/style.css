@@ -128,6 +128,56 @@ ul {
 /* button css end */
 
 
+/* cursor css start */
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cursor div {
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
+
+.cursor div div {
+    border: 1px solid #2eff88;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+    box-shadow: 0 0 50px 5px #d7abff6e;
+}
+
+.cursor div:nth-child(1),
+.cursor div:nth-child(2) {
+    width: 100%;
+    height: 100%;
+}
+
+.cursor div:nth-child(1) {
+    transition: transform 0.2s ease-out;
+}
+
+.cursor div:nth-child(2) {
+    transition: transform 0.1s ease-out;
+}
+
+.cursor div:nth-child(2) div {
+    background: #2eff88;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+}
+
+
+/* cursor css end */
+
+
 /* Header CSS Start */
 
 .header-top {
@@ -327,7 +377,9 @@ ul {
 /* Banner CSS Start */
 
 
-/* the rush play section css start */
+
+
+/* What You’ll Find Inside css start */
 
 .benefits {
     display: grid;
@@ -394,4 +446,49 @@ h2.heading-bar {
 
 
 
-/* the rush play section css end */
+/* What You’ll Find Inside css end */
+
+
+
+/* the rush play edge section css start */
+.rush-play-text h2 {
+    color: #fff;
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+
+.rush-play-text ul li {
+    position: relative;
+    padding-left: 30px;
+}
+
+.rush-play-text ul li p::before {
+    position: absolute;
+    content: '.';
+    font-size: 50px;
+    top: -35px;
+    left: 1px;
+    color: #2eff88;
+}
+
+.rush-play-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 300px;
+}
+
+.the-rush-play {
+    background-color: rgba(0 0 0 / 60%);
+    background-blend-mode: multiply;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* the rush play edge section css end */
