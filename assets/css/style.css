@@ -325,3 +325,79 @@ ul {
 }
 
 /* Banner CSS Start */
+
+
+/* the rush play section css start */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)   ;
+    gap: 63px 1.7rem;
+    margin-top: 0;
+    
+}
+
+.benefits-sec {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.benefits-sec .container {
+    max-width: 1200px;
+}
+
+.benefit-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 26px 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    background: transparent;
+    border: 4px solid #2eff88;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 26px;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: #050517;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.benefit-card figure {
+    background: #fff;
+    margin-top: -60px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-card figure img {
+    width: 100px;
+    background-color: #302c2d;
+    height: 80px;
+    padding: 0 10px;
+}
+
+h2.heading-bar {
+    color: #050517;
+    text-align: center;
+    margin: 0 0 70px;
+    font-size: 4rem;
+}
+
+
+
+
+/* the rush play section css end */
