@@ -163,10 +163,6 @@ ul {
     width: 12.5rem;
 }
 
-.logo img {
-    height: 100px;
-    width: 150px;
-}
 
 .header-actions {
     display: flex;
@@ -215,7 +211,7 @@ ul {
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 15rem;
     height: 100%;
     background: #000;
@@ -264,7 +260,7 @@ ul {
 }
 
 .main_content {
-    margin-left: 15rem;
+    margin-right: 15rem;
 }
 
 
