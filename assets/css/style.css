@@ -183,22 +183,6 @@ ul {
 
 
 /* Header CSS Start */
-.header-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    background: #262626;
-    z-index: 999;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.header_inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.25rem;
-}
 
 /* Left: logo */
 .logo {
@@ -216,101 +200,137 @@ ul {
     width: 12rem;
 }
 
-/* Center: menu (desktop only) */
-.sidebar {
-    flex: 2;
-}
-.sidebar ul {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-.sidebar ul li {
-    list-style: none;
-}
-.sidebar ul li a {
-    color: #fff;
-    font-size: 1rem;
-    text-decoration: none;
-    position: relative;
-}
 
-/* Right: buttons */
-.header-actions {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-}
+.custom-header {
+    background:#2a2a2a;
+    padding:20px 30px;
+    position:relative;
+    z-index:1000;
+    border-bottom: 1px solid #333;
+  }
+  .custom-header-inner {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    max-width:1200px;
+    margin:0 auto;
+  }
 
-/* Hamburger button */
-.menu-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-left: 10px;
-    display: none; /* hidden on desktop */
-}
+  /* LOGO */
+  .custom-logo {
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  .logo-container {
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  .panda-logo {
+    width:50px;
+    height:50px;
+    background:linear-gradient(135deg, #32ff88, #28d170);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .panda-logo::before {
+    content:"🐼";
+    font-size:24px;
+    filter:grayscale(1) brightness(0) invert(1);
+  }
+  .logo-text {
+    font-family:"Orbitron",monospace;
+    font-weight:900;
+    font-size:18px;
+    color:#32ff88;
+    text-shadow:0 0 10px rgba(50,255,136,0.5);
+    letter-spacing:1px;
+  }
+  .logo-text span {
+    display:block;
+    line-height:1.1;
+  }
 
-/* Sidebar (mobile menu) */
-/* .sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 15rem;
-    height: 100%;
-    background: #000;
-    color: #fff;
-    padding-top: 5rem;
-    flex: none;
-    transition: right 0.3s ease;
-    box-shadow: rgba(252, 238, 10, 0.24) 0px 3px 8px;
-    z-index: 1000;
-} */
-.sidebar.active {
-    right: 100%;
-}
+  /* NAVIGATION */
+  .custom-nav {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+  }
+  .custom-nav ul {
+    display:flex;
+    list-style:none;
+    gap:40px;
+    align-items:center;
+  }
+  .custom-nav ul li a {
+    color:#fff;
+    font-size:16px;
+    font-weight:500;
+    text-decoration:none;
+    transition:.3s;
+    position:relative;
+  }
+  .custom-nav ul li a:hover { 
+    color:#32ff88; 
+    text-shadow:0 0 5px rgba(50,255,136,0.3);
+  }
 
+  /* BUTTONS */
+  .custom-buttons {
+    display:flex;
+    gap:15px;
+  }
+  .custom-btn {
+    background:#32ff88;
+    border:2px solid #fff;
+    padding:12px 24px;
+    font-family:"Orbitron",monospace;
+    font-weight:700;
+    font-size:14px;
+    color:#000;
+    cursor:pointer;
+    clip-path:polygon(15% 0%,85% 0%,100% 50%,85% 100%,15% 100%,0% 50%);
+    transition:all .3s ease;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .custom-btn:hover { 
+    background:#28d170; 
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(50,255,136,0.3);
+  }
+  
+  /* Hide mobile buttons on desktop */
+  .mobile-buttons {
+    display:none;
+  }
 
-/* Close button in sidebar */
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-}
+  /* TOGGLE */
+  .menu-toggle {
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#32ff88;
+    z-index:10001;
+    padding:8px;
+    border-radius:4px;
+    transition:all .3s ease;
+  }
+  .menu-toggle:hover {
+    background:rgba(50,255,136,0.1);
+    transform:scale(1.1);
+  }
 
-/* -------- Responsive -------- */
-@media (max-width: 1124px) {
-    /* Hide center menu in header */
-    .header-top .sidebar {
-        display: none;
-    }
-
-    /* Show hamburger */
-    .menu-btn {
-        display: block;
-    }
-
-    /* Sidebar (mobile) visible only when active */
-    .sidebar.active {
-        display: block;
-    }
-
-    /* Show close button in sidebar */
-    .close-btn {
-        display: block;
-    }
-}
+  /* MOBILE STYLES */
+ 
 
 
 
