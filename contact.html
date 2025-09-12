@@ -1,526 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rush Play Game</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:"Inter",sans-serif; background:#1a1a1a; color:#fff; }
-
-    /* HEADER */
-    .custom-header {
-      background:#2a2a2a;
-      padding:20px 30px;
-      position:relative;
-      z-index:1000;
-      border-bottom: 1px solid #333;
-    }
-    .custom-header-inner {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:relative;
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    /* LOGO */
-    .custom-logo {
-      display:flex;
-      align-items:center;
-      gap:15px;
-    }
-    .logo-container {
-      display:flex;
-      align-items:center;
-      gap:15px;
-    }
-    .panda-logo {
-      width:50px;
-      height:50px;
-      background:linear-gradient(135deg, #32ff88, #28d170);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
-    .panda-logo::before {
-      content:"🐼";
-      font-size:24px;
-      filter:grayscale(1) brightness(0) invert(1);
-    }
-    .logo-text {
-      font-family:"Orbitron",monospace;
-      font-weight:900;
-      font-size:18px;
-      color:#32ff88;
-      text-shadow:0 0 10px rgba(50,255,136,0.5);
-      letter-spacing:1px;
-    }
-    .logo-text span {
-      display:block;
-      line-height:1.1;
-    }
-
-    /* NAVIGATION */
-    .custom-nav {
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      align-items:center;
-    }
-    .custom-nav ul {
-      display:flex;
-      list-style:none;
-      gap:40px;
-      align-items:center;
-    }
-    .custom-nav ul li a {
-      color:#fff;
-      font-size:16px;
-      font-weight:500;
-      text-decoration:none;
-      transition:.3s;
-      position:relative;
-    }
-    .custom-nav ul li a:hover { 
-      color:#32ff88; 
-      text-shadow:0 0 5px rgba(50,255,136,0.3);
-    }
-
-    /* BUTTONS */
-    .custom-buttons {
-      display:flex;
-      gap:15px;
-    }
-    .custom-btn {
-      background:#32ff88;
-      border:2px solid #fff;
-      padding:12px 24px;
-      font-family:"Orbitron",monospace;
-      font-weight:700;
-      font-size:14px;
-      color:#000;
-      cursor:pointer;
-      clip-path:polygon(15% 0%,85% 0%,100% 50%,85% 100%,15% 100%,0% 50%);
-      transition:all .3s ease;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .custom-btn:hover { 
-      background:#28d170; 
-      transform:translateY(-2px);
-      box-shadow:0 5px 15px rgba(50,255,136,0.3);
-    }
-    
-    /* Hide mobile buttons on desktop */
-    .mobile-buttons {
-      display:none;
-    }
-
-    /* TOGGLE */
-    .menu-toggle {
-      display:none;
-      font-size:28px;
-      cursor:pointer;
-      color:#32ff88;
-      z-index:10001;
-      padding:8px;
-      border-radius:4px;
-      transition:all .3s ease;
-    }
-    .menu-toggle:hover {
-      background:rgba(50,255,136,0.1);
-      transform:scale(1.1);
-    }
-
-    /* MOBILE STYLES */
-    @media(max-width:991px){
-      .custom-header {
-        padding:15px 20px;
-      }
-      
-      .logo-text {
-        font-size:16px;
-      }
-      
-      .custom-nav {
-        position:fixed;
-        top:0;
-        left:-100%;
-        transform:none;
-        flex-direction:column;
-        justify-content:flex-start;
-        align-items:flex-start;
-        background:#2a2a2a;
-        width:280px;
-        height:100%;
-        padding:80px 30px;
-        gap:40px;
-        transition:left .4s ease-in-out;
-        z-index:9999;
-        border-right:1px solid #333;
-      }
-      .custom-nav.active { left:0; }
-
-      .custom-nav ul {
-        flex-direction:column;
-        gap:25px;
-        width:100%;
-      }
-      .custom-nav ul li a { 
-        font-size:20px; 
-        font-weight:600;
-      }
-
-      .custom-buttons {
-        display:none;
-      }
-      
-      .mobile-buttons {
-        display:flex;
-        flex-direction:column;
-        gap:20px;
-        width:100%;
-        margin-top:30px;
-      }
-      .mobile-buttons .custom-btn { 
-        width:100%; 
-        padding:15px 24px;
-        font-size:16px;
-      }
-
-      .menu-toggle { display:block; }
-    }
-
-    /* OVERLAY */
-    .menu-overlay {
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,.6);
-      z-index:999;
-      opacity:0;
-      visibility:hidden;
-      transition:all .3s ease;
-    }
-    .menu-overlay.active { opacity:1; visibility:visible; }
-  </style>
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="shortcut icon" href="assets/images/fav-icon.png" type="image/x-icon">
+  <title>Responsible Play </title>
 </head>
+
 <body>
+  <!-- cursor html -->
 
-<header class="custom-header">
-  <div class="custom-header-inner">
-    <!-- Logo -->
-    <div class="custom-logo">
-      <div class="logo-container">
-        <div class="panda-logo"></div>
-        <div class="logo-text">
-          <span>RUSH</span>
-          <span>PLAY GAME</span>
-        </div>
+  <!-- cursor html -->
+
+
+  <!-- Header Start -->
+  <header class="custom-header">
+    <div class="custom-header-inner">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="./"></a>
       </div>
-    </div>
 
-    <!-- Menu -->
-    <nav class="custom-nav" id="customNav">
-      <ul>
-        <li><a href="./">Home</a></li>
-        <li><a href="play">Play</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="rewards">Rewards</a></li>
-      </ul>
-      <div class="mobile-buttons">
+      <!-- Menu -->
+      <nav class="custom-nav" id="customNav">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="play">Play</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="rewards">Rewards</a></li>
+        </ul>
+        <div class="mobile-buttons">
+          <button class="custom-btn">LOGIN</button>
+          <button class="custom-btn">SIGN UP</button>
+        </div>
+      </nav>
+
+      <!-- Buttons -->
+      <div class="custom-buttons">
         <button class="custom-btn">LOGIN</button>
         <button class="custom-btn">SIGN UP</button>
       </div>
-    </nav>
 
-    <!-- Buttons -->
-    <div class="custom-buttons">
-      <button class="custom-btn">LOGIN</button>
-      <button class="custom-btn">SIGN UP</button>
-    </div>
-
-    <!-- Toggle -->
-    <div class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
-
-  </div>
-</header>
-
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
-      <div class="modal-header" style="border-bottom: 1px solid #333;">
-        <h5 class="modal-title" id="loginModalLabel" style="color: #32ff88; font-family: 'Orbitron', monospace;">LOGIN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+      <!-- Toggle -->
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
       </div>
-      <div class="modal-body">
-        <form id="loginForm">
-          <div class="mb-3">
-            <label for="loginEmail" class="form-label" style="color: #fff;">Email Address</label>
-            <input type="email" class="form-control" id="loginEmail" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="loginEmailError"></div>
+
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+
+
+  <main>
+    <section class="inner-bnr" style="background: url(images/privacy-bnr.jpg);">
+      <div class="container">
+        <div class="inner-content">
+          <h2>Contact </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="need-help">
+      <div class="container">
+        <div class="need-help-inner">
+          <h3>Need help or have a question?</h3>
+          <p>The Rush Play team is ready to keep things moving.</p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="pbmit-ihbox">
+                <div class="pbmit-ihbox-box">
+                  <div class="pbmit-icon-wrapper d-flex align-items-center justify-content-between">
+                    <div class="pbmit-title-wrap">
+                      <h2>Email Support</h2>
+                    </div>
+                    <div class="pbmit-ihbox-icon">
+                      <!-- Email SVG Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" viewBox="0 0 24 24">
+                        <path
+                          d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.999l7.445 6.6a1 1 0 0 0 1.11 0L20 8.999V18H4z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="pbmit-content-wrapper">
+                    <p> Reach us at <a href="mailto:help@rush-play.games">help@rush-play.games</a> for
+                      account issues, technical support, or general
+                      questions. We aim to respond quickly so you can get back to the action.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="pbmit-ihbox">
+                <div class="pbmit-ihbox-box">
+                  <div class="pbmit-icon-wrapper d-flex align-items-center justify-content-between">
+                    <div class="pbmit-title-wrap">
+                      <h2>Help Center</h2>
+                    </div>
+                    <div class="pbmit-ihbox-icon">
+                      <!-- Help/Support SVG Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm.25 17h-1.5v-1.5h1.5zm1.172-5.695c-.352.434-.672.794-.672 2.195h-1.5v-.345c0-1.02.449-1.587.8-1.983a2.331 2.331 0 0 0 .552-.875c.128-.414.025-.855-.294-1.178a1.167 1.167 0 0 0-1.323-.163 1.495 1.495 0 0 0-.562.694l-1.37-.59a3.079 3.079 0 0 1 1.554-1.932 3.723 3.723 0 0 1 2.39-.383c1.203.26 1.955 1.137 1.955 2.287 0 1.097-.595 1.722-1.337 2.344z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="pbmit-content-wrapper">
+                    <p> Check our Help section for instant answers on tokens, rewards, and gameplay. Most
+                      common issues are covered there so you don’t have to wait.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="pbmit-ihbox">
+                <div class="pbmit-ihbox-box">
+                  <div class="pbmit-icon-wrapper d-flex align-items-center justify-content-between">
+                    <div class="pbmit-title-wrap">
+                      <h2>Feedback</h2>
+                    </div>
+                    <div class="pbmit-ihbox-icon">
+                      <!-- Feedback/Chat SVG Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" viewBox="0 0 24 24">
+                        <path
+                          d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 8h-8v-2h8zm0-3h-8V5h8z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="pbmit-content-wrapper">
+                    <p> Got an idea that could make Rush Play even better? Share your feedback — we’re
+                      always looking for ways to improve the experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="loginPassword" class="form-label" style="color: #fff;">Password</label>
-            <input type="password" class="form-control" id="loginPassword" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="loginPasswordError"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- footer sec start -->
+  <footer class="footer pt-80">
+    <div class="container">
+      <div class="footer_wrapper">
+        <div class="footer_disclaimer ">
+          <h4>
+            Disclaimer
+          </h4>
+          <p>
+            Rush Play is designed as an online social gaming destination for entertainment only.
+            Games are played with digital tokens that carry no real-world cash value and cannot be
+            exchanged for money or prizes. Access is limited to players aged 18+ or the legal age of
+            majority in their location. Rush Play offers social casino-style fun, not gambling, and
+            participation should always be viewed as leisure. Use of this site constitutes agreement
+            with our Terms of Service and Privacy Policy. If at any time play feels excessive, we
+            encourage taking a break or seeking support through responsible gaming resources.
+          </p>
+        </div>
+        <div class="footer_navbar" data-aos="fade-left">
+          <ul class="footer_list">
+            <li class="footer_item">
+              <a href="responsible-play">Responsible Play
+              </a>
+            </li>
+            <li class="footer_item">
+              <a href="privacy-policy">Privacy Policy
+              </a>
+            </li>
+            <li class="footer_item">
+              <a href="terms-and-conditions">Terms & Conditions
+              </a>
+            </li>
+
+            <li class="footer_item">
+              <a href="cookie-policy">Cookie Policy
+              </a>
+            </li>
+          </ul>
+          <div class="socials" data-aos="fade-right">
+            <div class="social_wrapper">
+              <div class="social ">
+                <a href="https://www.facebook.com/" target="_blank" class="social_link social_link--fb">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path
+                      d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="social ">
+                <a href="https://www.instagram.com/" target="_blank" class="social_link social_link--instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="social ">
+                <a href="https://x.com/" target="_blank" class="social_link social_link--twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="social ">
+                <a href="https://telegram.org/" target="_blank" class="social_link social_link--telegram">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                    <path
+                      d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="rememberMe" style="background: #1a1a1a; border: 1px solid #333;">
-            <label class="form-check-label" for="rememberMe" style="color: #fff;">Remember me</label>
+        </div>
+
+        <div class="footer_btm">
+          <div class="footer_btmWrapp">
+            <div class="copyright">
+              <p>
+                Copyright © 2025. <a href="./">rush-play.games</a> All rights reserved</p>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+            <div class="ssl">
+              <span class="sslLink"></span>
+            </div>
           </div>
-          <div class="d-grid">
-            <button type="submit" class="btn" style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">LOGIN</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer sec end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
+        <div class="modal-header" style="border-bottom: 1px solid #333;">
+          <h5 class="modal-title" id="loginModalLabel" style="color: #32ff88; font-family: 'Orbitron', monospace;">LOGIN
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label" style="color: #fff;">Email Address</label>
+              <input type="email" class="form-control" id="loginEmail" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="loginEmailError"></div>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label" style="color: #fff;">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="loginPasswordError"></div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe"
+                style="background: #1a1a1a; border: 1px solid #333;">
+              <label class="form-check-label" for="rememberMe" style="color: #fff;">Remember me</label>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn"
+                style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">LOGIN</button>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <a href="#" style="color: #32ff88; text-decoration: none;">Forgot Password?</a>
           </div>
-        </form>
-        <div class="text-center mt-3">
-          <a href="#" style="color: #32ff88; text-decoration: none;">Forgot Password?</a>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Signup Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
-      <div class="modal-header" style="border-bottom: 1px solid #333;">
-        <h5 class="modal-title" id="signupModalLabel" style="color: #32ff88; font-family: 'Orbitron', monospace;">SIGN UP</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
-      </div>
-      <div class="modal-body">
-        <form id="signupForm">
-          <div class="mb-3">
-            <label for="signupName" class="form-label" style="color: #fff;">Full Name</label>
-            <input type="text" class="form-control" id="signupName" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="signupNameError"></div>
-          </div>
-          <div class="mb-3">
-            <label for="signupEmail" class="form-label" style="color: #fff;">Email Address</label>
-            <input type="email" class="form-control" id="signupEmail" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="signupEmailError"></div>
-          </div>
-          <div class="mb-3">
-            <label for="signupPassword" class="form-label" style="color: #fff;">Password</label>
-            <input type="password" class="form-control" id="signupPassword" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="signupPasswordError"></div>
-          </div>
-          <div class="mb-3">
-            <label for="confirmPassword" class="form-label" style="color: #fff;">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPassword" required style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-            <div class="invalid-feedback" id="confirmPasswordError"></div>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="agreeTerms" required style="background: #1a1a1a; border: 1px solid #333;">
-            <label class="form-check-label" for="agreeTerms" style="color: #fff;">I agree to the <a href="#" style="color: #32ff88;">Terms and Conditions</a></label>
-            <div class="invalid-feedback" id="agreeTermsError"></div>
-          </div>
-          <div class="d-grid">
-            <button type="submit" class="btn" style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">SIGN UP</button>
-          </div>
-        </form>
+  <!-- Signup Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
+        <div class="modal-header" style="border-bottom: 1px solid #333;">
+          <h5 class="modal-title" id="signupModalLabel" style="color: #32ff88; font-family: 'Orbitron', monospace;">SIGN
+            UP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="signupName" class="form-label" style="color: #fff;">Full Name</label>
+              <input type="text" class="form-control" id="signupName" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="signupNameError"></div>
+            </div>
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label" style="color: #fff;">Email Address</label>
+              <input type="email" class="form-control" id="signupEmail" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="signupEmailError"></div>
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label" style="color: #fff;">Password</label>
+              <input type="password" class="form-control" id="signupPassword" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="signupPasswordError"></div>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label" style="color: #fff;">Confirm
+                Password</label>
+              <input type="password" class="form-control" id="confirmPassword" required
+                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+              <div class="invalid-feedback" id="confirmPasswordError"></div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="agreeTerms" required
+                style="background: #1a1a1a; border: 1px solid #333;">
+              <label class="form-check-label" for="agreeTerms" style="color: #fff;">I agree to the <a href="#"
+                  style="color: #32ff88;">Terms and Conditions</a></label>
+              <div class="invalid-feedback" id="agreeTermsError"></div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn"
+                style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">SIGN
+                UP</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Mobile menu toggle functionality
-  const menuToggle=document.getElementById("menuToggle");
-  const customNav=document.getElementById("customNav");
-  const menuOverlay=document.getElementById("menuOverlay");
-  const toggleIcon=menuToggle.querySelector("i");
 
-  menuToggle.addEventListener("click",()=>{
-    customNav.classList.toggle("active");
-    menuOverlay.classList.toggle("active");
-    toggleIcon.classList.toggle("fa-bars");
-    toggleIcon.classList.toggle("fa-times");
-  });
-  menuOverlay.addEventListener("click",()=>{
-    customNav.classList.remove("active");
-    menuOverlay.classList.remove("active");
-    toggleIcon.classList.add("fa-bars");
-    toggleIcon.classList.remove("fa-times");
-  });
 
-  // Modal functionality
-  const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-  const signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
-
-  // Login button click handlers
-  document.querySelectorAll('.custom-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      if (this.textContent.trim() === 'LOGIN') {
-        loginModal.show();
-      } else if (this.textContent.trim() === 'SIGN UP') {
-        signupModal.show();
-      }
-    });
-  });
-
-  // Form validation functions
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
-
-  function validatePassword(password) {
-    return password.length >= 6;
-  }
-
-  function showError(inputId, errorId, message) {
-    const input = document.getElementById(inputId);
-    const error = document.getElementById(errorId);
-    input.classList.add('is-invalid');
-    error.textContent = message;
-  }
-
-  function clearError(inputId, errorId) {
-    const input = document.getElementById(inputId);
-    const error = document.getElementById(errorId);
-    input.classList.remove('is-invalid');
-    error.textContent = '';
-  }
-
-  // Login form validation
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    
-    let isValid = true;
-
-    // Clear previous errors
-    clearError('loginEmail', 'loginEmailError');
-    clearError('loginPassword', 'loginPasswordError');
-
-    // Validate email
-    if (!email) {
-      showError('loginEmail', 'loginEmailError', 'Email is required');
-      isValid = false;
-    } else if (!validateEmail(email)) {
-      showError('loginEmail', 'loginEmailError', 'Please enter a valid email');
-      isValid = false;
-    }
-
-    // Validate password
-    if (!password) {
-      showError('loginPassword', 'loginPasswordError', 'Password is required');
-      isValid = false;
-    } else if (!validatePassword(password)) {
-      showError('loginPassword', 'loginPasswordError', 'Password must be at least 6 characters');
-      isValid = false;
-    }
-
-    if (isValid) {
-      // Simulate login process
-      alert('Login successful! Welcome to Rush Play Game!');
-      loginModal.hide();
-      this.reset();
-    }
-  });
-
-  // Signup form validation
-  document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('signupName').value;
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const agreeTerms = document.getElementById('agreeTerms').checked;
-    
-    let isValid = true;
-
-    // Clear previous errors
-    clearError('signupName', 'signupNameError');
-    clearError('signupEmail', 'signupEmailError');
-    clearError('signupPassword', 'signupPasswordError');
-    clearError('confirmPassword', 'confirmPasswordError');
-    clearError('agreeTerms', 'agreeTermsError');
-
-    // Validate name
-    if (!name) {
-      showError('signupName', 'signupNameError', 'Full name is required');
-      isValid = false;
-    } else if (name.length < 2) {
-      showError('signupName', 'signupNameError', 'Name must be at least 2 characters');
-      isValid = false;
-    }
-
-    // Validate email
-    if (!email) {
-      showError('signupEmail', 'signupEmailError', 'Email is required');
-      isValid = false;
-    } else if (!validateEmail(email)) {
-      showError('signupEmail', 'signupEmailError', 'Please enter a valid email');
-      isValid = false;
-    }
-
-    // Validate password
-    if (!password) {
-      showError('signupPassword', 'signupPasswordError', 'Password is required');
-      isValid = false;
-    } else if (!validatePassword(password)) {
-      showError('signupPassword', 'signupPasswordError', 'Password must be at least 6 characters');
-      isValid = false;
-    }
-
-    // Validate confirm password
-    if (!confirmPassword) {
-      showError('confirmPassword', 'confirmPasswordError', 'Please confirm your password');
-      isValid = false;
-    } else if (password !== confirmPassword) {
-      showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
-      isValid = false;
-    }
-
-    // Validate terms agreement
-    if (!agreeTerms) {
-      showError('agreeTerms', 'agreeTermsError', 'You must agree to the terms and conditions');
-      isValid = false;
-    }
-
-    if (isValid) {
-      // Simulate signup process
-      alert('Account created successfully! Welcome to Rush Play Game!');
-      signupModal.hide();
-      this.reset();
-    }
-  });
-
-  // Real-time validation for signup form
-  document.getElementById('confirmPassword').addEventListener('input', function() {
-    const password = document.getElementById('signupPassword').value;
-    const confirmPassword = this.value;
-    
-    if (confirmPassword && password !== confirmPassword) {
-      showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
-    } else {
-      clearError('confirmPassword', 'confirmPasswordError');
-    }
-  });
-</script>
-
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

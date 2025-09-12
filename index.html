@@ -55,8 +55,768 @@
 
         </div>
     </header>
+    <!-- Header End -->
 
-    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <main class="main_content">
+        <!-- Banner Section Start -->
+        <section class="banner" style="background-image: url('assets/images/slider_bg.jpg');">
+            <div class="container">
+                <div class="banner_wrap">
+                    <div class="banner_content">
+                        <div class="row g-4 banner_hover_effect">
+                            <div class="col-lg-6 col-md-12 col-12" id="bannerTextArea"
+                                style="position:relative;z-index:2;">
+                                <div class="banner_text">
+                                    <h1>
+                                        Feel the Rush
+                                    </h1>
+                                    <p>
+                                        Rush Play isn’t about waiting around — it’s about instant thrills. Fast
+                                        spins, quick wins, and nonstop entertainment, all in one digital arena built
+                                        for speed.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="banner_section_second_img" style="position:relative;overflow:visible;">
+                                    <img src="assets/images/hero-image.png" alt="" id="movingBannerImg"
+                                        style="position:relative;animation:moveBannerImg 4s linear infinite;">
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            @keyframes moveBannerImg {
+                                0% {
+                                    left: 0;
+                                    transform: translateX(0);
+                                }
+
+                                50% {
+                                    left: 20px;
+                                    transform: translateX(30px);
+                                }
+
+                                100% {
+                                    left: 0;
+                                    transform: translateX(0);
+                                }
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Banner Section end -->
+
+        <!-- play without limits section start -->
+        <section class="play_limits pt-8 pb-8 section-bg">
+            <div class="container">
+                <div class="play-limit-heading">
+                    <h2 class="figma_heading">
+                        Play Without Limits
+                    </h2>
+                    <p class="para">
+                        Tokens drop daily, games load instantly, and the action never slows down. From quick-fire
+                        slots to high-energy jackpots, Rush Play is designed to keep the momentum going.
+                    </p>
+                </div>
+                <!-- INSERT_YOUR_CODE -->
+                <style>
+                    .game-carousel-container {
+                        position: relative;
+                        width: 100%;
+                        margin: 40px 0;
+                        overflow: hidden;
+                    }
+
+                    .game-carousel {
+                        display: flex;
+                        transition: transform 0.5s cubic-bezier(.4, 0, .2, 1);
+                        will-change: transform;
+                    }
+
+                    .game-slide {
+                        flex: 0 0 33.3333%;
+                        max-width: 33.3333%;
+                        padding: 20px;
+                        box-sizing: border-box;
+                        position: relative;
+                        transition: box-shadow 0.3s;
+                        z-index: 1;
+                    }
+
+                    .game-card {
+                        background: #18191c;
+                        border-radius: 18px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+                        position: relative;
+                        height: 320px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        transition: box-shadow 0.3s;
+                    }
+
+                    .game-card:hover {
+                        box-shadow: 0 8px 32px #2eff88a0;
+                    }
+
+                    .game-thumb {
+                        width: 100%;
+                        height: 180px;
+                        background: #23272f;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2rem;
+                        color: #fff;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        border-bottom: 2px solid #2eff88;
+                        position: relative;
+                    }
+
+                    .game-title {
+                        margin: 18px 0 0 0;
+                        color: #2eff88;
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+                    .play-now-btn {
+                        display: none;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 2;
+                        padding: 12px 36px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        color: #111;
+                        background: #2eff88;
+                        border: 2px solid #fff;
+                        border-radius: 30px;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        box-shadow: 0 2px 12px #2eff8850;
+                        transition: background 0.2s, color 0.2s;
+                    }
+
+                    .game-card:hover .play-now-btn {
+                        display: block;
+                    }
+
+                    .carousel-arrow {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: #23272f;
+                        color: #2eff88;
+                        border: none;
+                        border-radius: 50%;
+                        width: 44px;
+                        height: 44px;
+                        font-size: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        z-index: 10;
+                        transition: background 0.2s;
+                    }
+
+                    .carousel-arrow:hover {
+                        background: #2eff88;
+                        color: #18191c;
+                    }
+
+                    .carousel-arrow.left {
+                        left: 0;
+                    }
+
+                    .carousel-arrow.right {
+                        right: 0;
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 991px) {
+                        .game-slide {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+                    }
+
+                    @media (max-width: 600px) {
+                        .game-slide {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            padding: 10px;
+                        }
+
+                        .game-card {
+                            height: 220px;
+                        }
+
+                        .game-thumb {
+                            height: 100px;
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    /* Modal styles */
+                    .game-modal-backdrop {
+                        display: none;
+                        position: fixed;
+                        z-index: 9999;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.7);
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .game-modal-backdrop.active {
+                        display: flex;
+                    }
+
+                    .game-modal-content {
+                        background: #18191c;
+                        border-radius: 16px;
+                        padding: 0;
+                        max-width: 90vw;
+                        max-height: 90vh;
+                        box-shadow: 0 8px 32px #2eff88a0;
+                        position: relative;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .game-modal-close {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background: #2eff88;
+                        color: #18191c;
+                        border: none;
+                        border-radius: 50%;
+                        width: 36px;
+                        height: 36px;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .game-modal-iframe {
+                        width: 70vw;
+                        height: 70vh;
+                        min-width: 320px;
+                        min-height: 320px;
+                        border: none;
+                        background: #000;
+                        border-radius: 0 0 16px 16px;
+                    }
+
+                    @media (max-width: 991px) {
+                        .game-modal-iframe {
+                            width: 90vw;
+                            height: 50vw;
+                            min-height: 220px;
+                        }
+                    }
+
+                    @media (max-width: 600px) {
+                        .game-modal-iframe {
+                            width: 98vw;
+                            height: 60vw;
+                            min-height: 180px;
+                        }
+                    }
+                </style>
+                <div class="game-carousel-container">
+                    <button class="carousel-arrow left" aria-label="Previous">&#8592;</button>
+                    <div class="game-carousel" id="gameCarousel">
+                        <!-- Game 1 -->
+                        <div class="game-slide">
+                            <div class="game-card">
+                                <div class="game-thumb" style="background:#1a1f2b;">
+                                    <img src="assets/images/olay-limi.jpg" alt="Game 1"
+                                        style="width:80px;height:80px;object-fit:contain;">
+                                </div>
+                                <div class="game-title">Lightning Slots</div>
+                                <button class="play-now-btn" data-game="1">Play Now</button>
+                            </div>
+                        </div>
+                        <!-- Game 2 -->
+                        <div class="game-slide">
+                            <div class="game-card">
+                                <div class="game-thumb" style="background:#1a1f2b;">
+                                    <img src="assets/images/game2-thumb.png" alt="Game 2">
+                                </div>
+                                <div class="game-title">Turbo Poker</div>
+                                <button class="play-now-btn" data-game="2">Play Now</button>
+                            </div>
+                        </div>
+                        <!-- Game 3 -->
+                        <div class="game-slide">
+                            <div class="game-card">
+                                <div class="game-thumb" style="background:#1a1f2b;">
+                                    <img src="assets/images/game3-thumb.png" alt="Game 3"
+                                        style="width:80px;height:80px;object-fit:contain;">
+                                </div>
+                                <div class="game-title">Rush Roulette</div>
+                                <button class="play-now-btn" data-game="3">Play Now</button>
+                            </div>
+                        </div>
+                        <!-- Game 4 -->
+                        <div class="game-slide">
+                            <div class="game-card">
+                                <div class="game-thumb" style="background:#1a1f2b;">
+                                    <img src="assets/images/game4-thumb.png" alt="Game 4"
+                                        style="width:80px;height:80px;object-fit:contain;">
+                                </div>
+                                <div class="game-title">Blitz Blackjack</div>
+                                <button class="play-now-btn" data-game="4">Play Now</button>
+                            </div>
+                        </div>
+                        <!-- Game 5 -->
+                        <div class="game-slide">
+                            <div class="game-card">
+                                <div class="game-thumb" style="background:#1a1f2b;">
+                                    <img src="assets/images/game5-thumb.png" alt="Game 5"
+                                        style="width:80px;height:80px;object-fit:contain;">
+                                </div>
+                                <div class="game-title">Spin Frenzy</div>
+                                <button class="play-now-btn" data-game="5">Play Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow right" aria-label="Next">&#8594;</button>
+                </div>
+                <!-- Modal for game iframe -->
+                <div class="game-modal-backdrop" id="gameModal">
+                    <div class="game-modal-content">
+                        <button class="game-modal-close" id="closeGameModal" aria-label="Close">&times;</button>
+                        <iframe class="game-modal-iframe" id="gameIframe" src="" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <script>
+                    // Carousel logic
+                    (function () {
+                        const carousel = document.getElementById('gameCarousel');
+                        const slides = carousel.children;
+                        const leftBtn = carousel.parentElement.querySelector('.carousel-arrow.left');
+                        const rightBtn = carousel.parentElement.querySelector('.carousel-arrow.right');
+                        let current = 0;
+                        let visibleSlides = 3;
+                        let autoSlideInterval = null;
+
+                        function updateVisibleSlides() {
+                            if (window.innerWidth <= 600) visibleSlides = 1;
+                            else if (window.innerWidth <= 991) visibleSlides = 2;
+                            else visibleSlides = 3;
+                        }
+                        function updateCarousel() {
+                            const slideWidth = slides[0].offsetWidth;
+                            carousel.style.transform = `translateX(-${current * slideWidth}px)`;
+                        }
+                        function nextSlide() {
+                            if (current < slides.length - visibleSlides) {
+                                current++;
+                            } else {
+                                current = 0;
+                            }
+                            updateCarousel();
+                        }
+                        function prevSlide() {
+                            if (current > 0) {
+                                current--;
+                            } else {
+                                current = slides.length - visibleSlides;
+                                if (current < 0) current = 0;
+                            }
+                            updateCarousel();
+                        }
+                        function startAutoSlide() {
+                            if (autoSlideInterval) clearInterval(autoSlideInterval);
+                            autoSlideInterval = setInterval(nextSlide, 3500);
+                        }
+                        function stopAutoSlide() {
+                            if (autoSlideInterval) clearInterval(autoSlideInterval);
+                        }
+                        leftBtn.addEventListener('click', function () {
+                            prevSlide();
+                            startAutoSlide();
+                        });
+                        rightBtn.addEventListener('click', function () {
+                            nextSlide();
+                            startAutoSlide();
+                        });
+                        window.addEventListener('resize', function () {
+                            updateVisibleSlides();
+                            if (current > slides.length - visibleSlides) current = 0;
+                            updateCarousel();
+                        });
+                        updateVisibleSlides();
+                        updateCarousel();
+                        startAutoSlide();
+
+                        // Pause on hover
+                        carousel.addEventListener('mouseenter', stopAutoSlide);
+                        carousel.addEventListener('mouseleave', startAutoSlide);
+                    })();
+
+                    // Modal logic
+                    (function () {
+                        const modal = document.getElementById('gameModal');
+                        const closeBtn = document.getElementById('closeGameModal');
+                        const iframe = document.getElementById('gameIframe');
+                        // Dummy game URLs (replace with real game URLs/embeds)
+                        const gameUrls = {
+                            1: "https://www.freeslotshub.com/demo/quickspin/arcane-gems/",
+                            2: "https://www.pokernow.club/",
+                            3: "https://www.roulette77india.com/free-roulette",
+                            4: "https://www.blackjackapprenticeship.com/play-blackjack/",
+                            5: "https://www.freeslotshub.com/demo/quickspin/sakura-fortune/"
+                        };
+                        document.querySelectorAll('.play-now-btn').forEach(btn => {
+                            btn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                const gameId = this.getAttribute('data-game');
+                                iframe.src = gameUrls[gameId] || '';
+                                modal.classList.add('active');
+                                document.body.style.overflow = 'hidden';
+                            });
+                        });
+                        closeBtn.addEventListener('click', function () {
+                            modal.classList.remove('active');
+                            iframe.src = '';
+                            document.body.style.overflow = '';
+                        });
+                        modal.addEventListener('click', function (e) {
+                            if (e.target === modal) {
+                                modal.classList.remove('active');
+                                iframe.src = '';
+                                document.body.style.overflow = '';
+                            }
+                        });
+                        // ESC to close
+                        document.addEventListener('keydown', function (e) {
+                            if (e.key === "Escape" && modal.classList.contains('active')) {
+                                modal.classList.remove('active');
+                                iframe.src = '';
+                                document.body.style.overflow = '';
+                            }
+                        });
+                    })();
+                </script>
+            </div>
+        </section>
+        <!-- play without limits section end -->
+
+
+        <!-- the rush play edge section start -->
+        <section class="the-rush-play py-5" style="background-image: url('assets/images/rush-background.jpg');">
+            <div class="container">
+                <div class="rush-play-main">
+                    <div class="row g-5">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="rush-play-text">
+                                <h2>
+                                    The Rush Play Edge
+                                </h2>
+                                <ul>
+                                    <li>
+                                        <p class="para">Mobile-first design for gaming on the go</p>
+                                    </li>
+                                    <li>
+                                        <p class="para">Free tokens every day</p>
+                                    </li>
+                                    <li>
+                                        <p class="para">Events and challenges that reward consistent play</p>
+                                    </li>
+                                    <li>
+                                        <p class="para">Games built for short bursts or long sessions</p>
+                                    </li>
+                                    <li>
+                                        <p class="para">Mobile-first design for gaming on the go</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="rush-play-img" style="background-image: url('assets/images/hero-image.png');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- the rush play edge section end -->
+
+
+        <!-- What You’ll Find Inside section start  -->
+        <section class="rush-edge-section py-5">
+            <div class="container">
+                <div class="rush-edge-heading">
+                    <h2 class="figma_heading text-center">What You’ll Find Inside</h2>
+
+                </div>
+                <div class="benefits">
+                    <div class="benefit-card">
+                        <figure>
+                            <img src="assets/images/inside-img1.png">
+                        </figure>
+                        <h3>High-Speed Slots</h3>
+                        <p class="para">
+                            Spin through themes and features that deliver excitement fast
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <figure>
+                            <img src="assets/images/inside-img2.png">
+                        </figure>
+                        <h3>Progressive Jackpots</h3>
+                        <p class="para">Pools that grow with every play</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <figure>
+                            <img src="assets/images/inside-img3.png">
+                        </figure>
+                        <h3>Rapid-Fire Games </h3>
+                        <p class="para">Scratch, spin, and win in seconds</p>
+                    </div>
+                    <div class="benefit-card">
+                        <figure>
+                            <img src="assets/images/inside-img4.png">
+                        </figure>
+                        <h3> Classic Tables</h3>
+                        <p class="para">Blackjack and roulette, streamlined for quick play</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- What You’ll Find Inside section start  -->
+
+
+        <!-- Step Into the Action section start -->
+        <section class="step-into-action-section py-5">
+            <div class="container">
+                <div class="step-into-action-content">
+                    <h2 class="figma_heading step-action-heading">
+                        Step Into the Action
+                    </h2>
+                    <p class="para step-action-para">
+                        Create your account today, grab your starter tokens, and see how fast the fun moves inside
+                        Rush Play.
+                    </p>
+                    <a href="signup" class="custom-btn step-action-btn">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Step Into the Action section end -->
+
+
+        <!-- newsletter section start -->
+        <section class="newsletter_sec pt-8 pb-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="titlepage">
+                            <h2 class="figma_heading text-center">Get Updates First</h2>
+                            <span class="underline"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="newslettr_wrap text-center aos-init aos-animate" data-aos="fade-up"
+                    data-aos-duration="1000">
+                    <h4>
+                        Subscribe to the Rush Play newsletter for early access to events, new game launches, and
+                        exclusive token drops.
+                    </h4>
+
+                    <p id="email-message" style="color: red; display: none;"></p>
+                    <div class="newsletter_input_box">
+                        <span class="input_msg" style="background-image: url('assets/images/mail.png');">
+                        </span>
+                        <input type="text" id="newsletter-email" placeholder="Enter Your email">
+                    </div>
+
+                    <div class="explore-button">
+                        <button class="custom-btn">Subscribe</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- newsletter section end -->
+
+
+        <!-- faqs section start -->
+        <section class="fqas-section pt-8 pb-8 section-bg">
+            <div class="container">
+                <div class="ko-container">
+                    <h2 class="figma_heading text-center">FAQ'<span>s</span></h2>
+                    <div class="ko-faq-accordion">
+                        <div class="ko-accordion-item">
+                            <div class="ko-accordion-item-header">Is Rush Play really free?</div>
+                            <div class="ko-accordion-item-body">
+                                <p class="ko-accordion-item-body-content"> Yes — all games are played with virtual
+                                    tokens that have no cash value.</p>
+                            </div>
+                        </div>
+                        <div class="ko-accordion-item">
+                            <div class="ko-accordion-item-header">What makes Rush Play different?</div>
+                            <div class="ko-accordion-item-body">
+                                <p class="ko-accordion-item-body-content"> We focus on speed and instant
+                                    entertainment. No waiting, no downloads — just play.</p>
+                            </div>
+                        </div>
+                        <div class="ko-accordion-item">
+                            <div class="ko-accordion-item-header">Do I need an account?
+                            </div>
+                            <div class="ko-accordion-item-body">
+                                <p class="ko-accordion-item-body-content"> Yes, accounts are free to create and give
+                                    you access to daily rewards and progress tracking.</p>
+                            </div>
+                        </div>
+                        <div class="ko-accordion-item">
+                            <div class="ko-accordion-item-header">Can I win real prizes?
+                            </div>
+                            <div class="ko-accordion-item-body">
+                                <p class="ko-accordion-item-body-content"> No. Rush Play is entertainment-only.
+                                    Tokens and rewards cannot be exchanged for money.</p>
+                            </div>
+                        </div>
+                        <div class="ko-accordion-item">
+                            <div class="ko-accordion-item-header">Is there an age restriction?
+                            </div>
+                            <div class="ko-accordion-item-body">
+                                <p class="ko-accordion-item-body-content"> Yes, you must be 18+ or of legal age in
+                                    your region to play.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- faqs section end -->
+
+    </main>
+
+    <!-- footer sec start -->
+    <footer class="footer pt-80">
+        <div class="container">
+            <div class="footer_wrapper">
+                <div class="footer_disclaimer ">
+                    <h4>
+                        Disclaimer
+                    </h4>
+                    <p>
+                        Rush Play is designed as an online social gaming destination for entertainment only.
+                        Games are played with digital tokens that carry no real-world cash value and cannot be
+                        exchanged for money or prizes. Access is limited to players aged 18+ or the legal age of
+                        majority in their location. Rush Play offers social casino-style fun, not gambling, and
+                        participation should always be viewed as leisure. Use of this site constitutes agreement
+                        with our Terms of Service and Privacy Policy. If at any time play feels excessive, we
+                        encourage taking a break or seeking support through responsible gaming resources.
+                    </p>
+                </div>
+                <div class="footer_navbar" data-aos="fade-left">
+                    <ul class="footer_list">
+                        <li class="footer_item">
+                            <a href="responsible-play">Responsible Play
+                            </a>
+                        </li>
+                        <li class="footer_item">
+                            <a href="privacy-policy">Privacy Policy
+                            </a>
+                        </li>
+                        <li class="footer_item">
+                            <a href="terms-and-conditions">Terms & Conditions
+                            </a>
+                        </li>
+
+                        <li class="footer_item">
+                            <a href="cookie-policy">Cookie Policy
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="socials" data-aos="fade-right">
+                        <div class="social_wrapper">
+                            <div class="social ">
+                                <a href="https://www.facebook.com/" target="_blank" class="social_link social_link--fb">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path
+                                            d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social ">
+                                <a href="https://www.instagram.com/" target="_blank"
+                                    class="social_link social_link--instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social ">
+                                <a href="https://x.com/" target="_blank" class="social_link social_link--twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path
+                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social ">
+                                <a href="https://telegram.org/" target="_blank"
+                                    class="social_link social_link--telegram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                                        <path
+                                            d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer_btm">
+                    <div class="footer_btmWrapp">
+                        <div class="copyright">
+                            <p>
+                                Copyright © 2025. <a href="./">rush-play.games</a> All rights reserved</p>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="ssl">
+                            <span class="sslLink"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer sec end -->
+
+
+
+
+
 
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -157,768 +917,6 @@
 
 
 
-    <!-- Header End -->
-    <div class="aoshidden">
-
-        <main class="main_content">
-            <!-- Banner Section Start -->
-            <section class="banner" style="background-image: url('assets/images/slider_bg.jpg');">
-                <div class="container">
-                    <div class="banner_wrap">
-                        <div class="banner_content">
-                            <div class="row g-4 banner_hover_effect">
-                                <div class="col-lg-6 col-md-12 col-12" id="bannerTextArea"
-                                    style="position:relative;z-index:2;">
-                                    <div class="banner_text">
-                                        <h1>
-                                            Feel the Rush
-                                        </h1>
-                                        <p>
-                                            Rush Play isn’t about waiting around — it’s about instant thrills. Fast
-                                            spins, quick wins, and nonstop entertainment, all in one digital arena built
-                                            for speed.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12 col-12">
-                                    <div class="banner_section_second_img" style="position:relative;overflow:visible;">
-                                        <img src="assets/images/hero-image.png" alt="" id="movingBannerImg"
-                                            style="position:relative;animation:moveBannerImg 4s linear infinite;">
-                                    </div>
-                                </div>
-                            </div>
-                            <style>
-                                @keyframes moveBannerImg {
-                                    0% {
-                                        left: 0;
-                                        transform: translateX(0);
-                                    }
-
-                                    50% {
-                                        left: 20px;
-                                        transform: translateX(30px);
-                                    }
-
-                                    100% {
-                                        left: 0;
-                                        transform: translateX(0);
-                                    }
-                                }
-                            </style>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Banner Section end -->
-
-            <!-- play without limits section start -->
-            <section class="play_limits pt-8 pb-8 section-bg">
-                <div class="container">
-                    <div class="play-limit-heading">
-                        <h2 class="figma_heading">
-                            Play Without Limits
-                        </h2>
-                        <p class="para">
-                            Tokens drop daily, games load instantly, and the action never slows down. From quick-fire
-                            slots to high-energy jackpots, Rush Play is designed to keep the momentum going.
-                        </p>
-                    </div>
-                    <!-- INSERT_YOUR_CODE -->
-                    <style>
-                        .game-carousel-container {
-                            position: relative;
-                            width: 100%;
-                            margin: 40px 0;
-                            overflow: hidden;
-                        }
-
-                        .game-carousel {
-                            display: flex;
-                            transition: transform 0.5s cubic-bezier(.4, 0, .2, 1);
-                            will-change: transform;
-                        }
-
-                        .game-slide {
-                            flex: 0 0 33.3333%;
-                            max-width: 33.3333%;
-                            padding: 20px;
-                            box-sizing: border-box;
-                            position: relative;
-                            transition: box-shadow 0.3s;
-                            z-index: 1;
-                        }
-
-                        .game-card {
-                            background: #18191c;
-                            border-radius: 18px;
-                            overflow: hidden;
-                            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-                            position: relative;
-                            height: 320px;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            transition: box-shadow 0.3s;
-                        }
-
-                        .game-card:hover {
-                            box-shadow: 0 8px 32px #2eff88a0;
-                        }
-
-                        .game-thumb {
-                            width: 100%;
-                            height: 180px;
-                            background: #23272f;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 2rem;
-                            color: #fff;
-                            font-weight: 600;
-                            letter-spacing: 1px;
-                            border-bottom: 2px solid #2eff88;
-                            position: relative;
-                        }
-
-                        .game-title {
-                            margin: 18px 0 0 0;
-                            color: #2eff88;
-                            font-size: 1.25rem;
-                            font-weight: 600;
-                            text-align: center;
-                        }
-
-                        .play-now-btn {
-                            display: none;
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            z-index: 2;
-                            padding: 12px 36px;
-                            font-size: 1rem;
-                            font-weight: bold;
-                            color: #111;
-                            background: #2eff88;
-                            border: 2px solid #fff;
-                            border-radius: 30px;
-                            cursor: pointer;
-                            text-transform: uppercase;
-                            box-shadow: 0 2px 12px #2eff8850;
-                            transition: background 0.2s, color 0.2s;
-                        }
-
-                        .game-card:hover .play-now-btn {
-                            display: block;
-                        }
-
-                        .carousel-arrow {
-                            position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            background: #23272f;
-                            color: #2eff88;
-                            border: none;
-                            border-radius: 50%;
-                            width: 44px;
-                            height: 44px;
-                            font-size: 2rem;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            cursor: pointer;
-                            z-index: 10;
-                            transition: background 0.2s;
-                        }
-
-                        .carousel-arrow:hover {
-                            background: #2eff88;
-                            color: #18191c;
-                        }
-
-                        .carousel-arrow.left {
-                            left: 0;
-                        }
-
-                        .carousel-arrow.right {
-                            right: 0;
-                        }
-
-                        /* Responsive */
-                        @media (max-width: 991px) {
-                            .game-slide {
-                                flex: 0 0 50%;
-                                max-width: 50%;
-                            }
-                        }
-
-                        @media (max-width: 600px) {
-                            .game-slide {
-                                flex: 0 0 100%;
-                                max-width: 100%;
-                                padding: 10px;
-                            }
-
-                            .game-card {
-                                height: 220px;
-                            }
-
-                            .game-thumb {
-                                height: 100px;
-                                font-size: 1.1rem;
-                            }
-                        }
-
-                        /* Modal styles */
-                        .game-modal-backdrop {
-                            display: none;
-                            position: fixed;
-                            z-index: 9999;
-                            left: 0;
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            background: rgba(0, 0, 0, 0.7);
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        .game-modal-backdrop.active {
-                            display: flex;
-                        }
-
-                        .game-modal-content {
-                            background: #18191c;
-                            border-radius: 16px;
-                            padding: 0;
-                            max-width: 90vw;
-                            max-height: 90vh;
-                            box-shadow: 0 8px 32px #2eff88a0;
-                            position: relative;
-                            overflow: hidden;
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .game-modal-close {
-                            position: absolute;
-                            top: 10px;
-                            right: 10px;
-                            background: #2eff88;
-                            color: #18191c;
-                            border: none;
-                            border-radius: 50%;
-                            width: 36px;
-                            height: 36px;
-                            font-size: 1.5rem;
-                            cursor: pointer;
-                            z-index: 2;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        .game-modal-iframe {
-                            width: 70vw;
-                            height: 70vh;
-                            min-width: 320px;
-                            min-height: 320px;
-                            border: none;
-                            background: #000;
-                            border-radius: 0 0 16px 16px;
-                        }
-
-                        @media (max-width: 991px) {
-                            .game-modal-iframe {
-                                width: 90vw;
-                                height: 50vw;
-                                min-height: 220px;
-                            }
-                        }
-
-                        @media (max-width: 600px) {
-                            .game-modal-iframe {
-                                width: 98vw;
-                                height: 60vw;
-                                min-height: 180px;
-                            }
-                        }
-                    </style>
-                    <div class="game-carousel-container">
-                        <button class="carousel-arrow left" aria-label="Previous">&#8592;</button>
-                        <div class="game-carousel" id="gameCarousel">
-                            <!-- Game 1 -->
-                            <div class="game-slide">
-                                <div class="game-card">
-                                    <div class="game-thumb" style="background:#1a1f2b;">
-                                        <img src="assets/images/olay-limi.jpg" alt="Game 1"
-                                            style="width:80px;height:80px;object-fit:contain;">
-                                    </div>
-                                    <div class="game-title">Lightning Slots</div>
-                                    <button class="play-now-btn" data-game="1">Play Now</button>
-                                </div>
-                            </div>
-                            <!-- Game 2 -->
-                            <div class="game-slide">
-                                <div class="game-card">
-                                    <div class="game-thumb" style="background:#1a1f2b;">
-                                        <img src="assets/images/game2-thumb.png" alt="Game 2">
-                                    </div>
-                                    <div class="game-title">Turbo Poker</div>
-                                    <button class="play-now-btn" data-game="2">Play Now</button>
-                                </div>
-                            </div>
-                            <!-- Game 3 -->
-                            <div class="game-slide">
-                                <div class="game-card">
-                                    <div class="game-thumb" style="background:#1a1f2b;">
-                                        <img src="assets/images/game3-thumb.png" alt="Game 3"
-                                            style="width:80px;height:80px;object-fit:contain;">
-                                    </div>
-                                    <div class="game-title">Rush Roulette</div>
-                                    <button class="play-now-btn" data-game="3">Play Now</button>
-                                </div>
-                            </div>
-                            <!-- Game 4 -->
-                            <div class="game-slide">
-                                <div class="game-card">
-                                    <div class="game-thumb" style="background:#1a1f2b;">
-                                        <img src="assets/images/game4-thumb.png" alt="Game 4"
-                                            style="width:80px;height:80px;object-fit:contain;">
-                                    </div>
-                                    <div class="game-title">Blitz Blackjack</div>
-                                    <button class="play-now-btn" data-game="4">Play Now</button>
-                                </div>
-                            </div>
-                            <!-- Game 5 -->
-                            <div class="game-slide">
-                                <div class="game-card">
-                                    <div class="game-thumb" style="background:#1a1f2b;">
-                                        <img src="assets/images/game5-thumb.png" alt="Game 5"
-                                            style="width:80px;height:80px;object-fit:contain;">
-                                    </div>
-                                    <div class="game-title">Spin Frenzy</div>
-                                    <button class="play-now-btn" data-game="5">Play Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-arrow right" aria-label="Next">&#8594;</button>
-                    </div>
-                    <!-- Modal for game iframe -->
-                    <div class="game-modal-backdrop" id="gameModal">
-                        <div class="game-modal-content">
-                            <button class="game-modal-close" id="closeGameModal" aria-label="Close">&times;</button>
-                            <iframe class="game-modal-iframe" id="gameIframe" src="" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <script>
-                        // Carousel logic
-                        (function () {
-                            const carousel = document.getElementById('gameCarousel');
-                            const slides = carousel.children;
-                            const leftBtn = carousel.parentElement.querySelector('.carousel-arrow.left');
-                            const rightBtn = carousel.parentElement.querySelector('.carousel-arrow.right');
-                            let current = 0;
-                            let visibleSlides = 3;
-                            let autoSlideInterval = null;
-
-                            function updateVisibleSlides() {
-                                if (window.innerWidth <= 600) visibleSlides = 1;
-                                else if (window.innerWidth <= 991) visibleSlides = 2;
-                                else visibleSlides = 3;
-                            }
-                            function updateCarousel() {
-                                const slideWidth = slides[0].offsetWidth;
-                                carousel.style.transform = `translateX(-${current * slideWidth}px)`;
-                            }
-                            function nextSlide() {
-                                if (current < slides.length - visibleSlides) {
-                                    current++;
-                                } else {
-                                    current = 0;
-                                }
-                                updateCarousel();
-                            }
-                            function prevSlide() {
-                                if (current > 0) {
-                                    current--;
-                                } else {
-                                    current = slides.length - visibleSlides;
-                                    if (current < 0) current = 0;
-                                }
-                                updateCarousel();
-                            }
-                            function startAutoSlide() {
-                                if (autoSlideInterval) clearInterval(autoSlideInterval);
-                                autoSlideInterval = setInterval(nextSlide, 3500);
-                            }
-                            function stopAutoSlide() {
-                                if (autoSlideInterval) clearInterval(autoSlideInterval);
-                            }
-                            leftBtn.addEventListener('click', function () {
-                                prevSlide();
-                                startAutoSlide();
-                            });
-                            rightBtn.addEventListener('click', function () {
-                                nextSlide();
-                                startAutoSlide();
-                            });
-                            window.addEventListener('resize', function () {
-                                updateVisibleSlides();
-                                if (current > slides.length - visibleSlides) current = 0;
-                                updateCarousel();
-                            });
-                            updateVisibleSlides();
-                            updateCarousel();
-                            startAutoSlide();
-
-                            // Pause on hover
-                            carousel.addEventListener('mouseenter', stopAutoSlide);
-                            carousel.addEventListener('mouseleave', startAutoSlide);
-                        })();
-
-                        // Modal logic
-                        (function () {
-                            const modal = document.getElementById('gameModal');
-                            const closeBtn = document.getElementById('closeGameModal');
-                            const iframe = document.getElementById('gameIframe');
-                            // Dummy game URLs (replace with real game URLs/embeds)
-                            const gameUrls = {
-                                1: "https://www.freeslotshub.com/demo/quickspin/arcane-gems/",
-                                2: "https://www.pokernow.club/",
-                                3: "https://www.roulette77india.com/free-roulette",
-                                4: "https://www.blackjackapprenticeship.com/play-blackjack/",
-                                5: "https://www.freeslotshub.com/demo/quickspin/sakura-fortune/"
-                            };
-                            document.querySelectorAll('.play-now-btn').forEach(btn => {
-                                btn.addEventListener('click', function (e) {
-                                    e.preventDefault();
-                                    const gameId = this.getAttribute('data-game');
-                                    iframe.src = gameUrls[gameId] || '';
-                                    modal.classList.add('active');
-                                    document.body.style.overflow = 'hidden';
-                                });
-                            });
-                            closeBtn.addEventListener('click', function () {
-                                modal.classList.remove('active');
-                                iframe.src = '';
-                                document.body.style.overflow = '';
-                            });
-                            modal.addEventListener('click', function (e) {
-                                if (e.target === modal) {
-                                    modal.classList.remove('active');
-                                    iframe.src = '';
-                                    document.body.style.overflow = '';
-                                }
-                            });
-                            // ESC to close
-                            document.addEventListener('keydown', function (e) {
-                                if (e.key === "Escape" && modal.classList.contains('active')) {
-                                    modal.classList.remove('active');
-                                    iframe.src = '';
-                                    document.body.style.overflow = '';
-                                }
-                            });
-                        })();
-                    </script>
-                </div>
-            </section>
-            <!-- play without limits section end -->
-
-
-            <!-- the rush play edge section start -->
-            <section class="the-rush-play py-5" style="background-image: url('assets/images/rush-background.jpg');">
-                <div class="container">
-                    <div class="rush-play-main">
-                        <div class="row g-5">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="rush-play-text">
-                                    <h2>
-                                        The Rush Play Edge
-                                    </h2>
-                                    <ul>
-                                        <li>
-                                            <p class="para">Mobile-first design for gaming on the go</p>
-                                        </li>
-                                        <li>
-                                            <p class="para">Free tokens every day</p>
-                                        </li>
-                                        <li>
-                                            <p class="para">Events and challenges that reward consistent play</p>
-                                        </li>
-                                        <li>
-                                            <p class="para">Games built for short bursts or long sessions</p>
-                                        </li>
-                                        <li>
-                                            <p class="para">Mobile-first design for gaming on the go</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="rush-play-img"
-                                    style="background-image: url('assets/images/hero-image.png');"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- the rush play edge section end -->
-
-
-            <!-- What You’ll Find Inside section start  -->
-            <section class="rush-edge-section py-5">
-                <div class="container">
-                    <div class="rush-edge-heading">
-                        <h2 class="figma_heading text-center">What You’ll Find Inside</h2>
-
-                    </div>
-                    <div class="benefits">
-                        <div class="benefit-card">
-                            <figure>
-                                <img src="assets/images/inside-img1.png">
-                            </figure>
-                            <h3>High-Speed Slots</h3>
-                            <p class="para">
-                                Spin through themes and features that deliver excitement fast
-                            </p>
-                        </div>
-                        <div class="benefit-card">
-                            <figure>
-                                <img src="assets/images/inside-img2.png">
-                            </figure>
-                            <h3>Progressive Jackpots</h3>
-                            <p class="para">Pools that grow with every play</p>
-                        </div>
-
-                        <div class="benefit-card">
-                            <figure>
-                                <img src="assets/images/inside-img3.png">
-                            </figure>
-                            <h3>Rapid-Fire Games </h3>
-                            <p class="para">Scratch, spin, and win in seconds</p>
-                        </div>
-                        <div class="benefit-card">
-                            <figure>
-                                <img src="assets/images/inside-img4.png">
-                            </figure>
-                            <h3> Classic Tables</h3>
-                            <p class="para">Blackjack and roulette, streamlined for quick play</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- What You’ll Find Inside section start  -->
-
-
-            <!-- Step Into the Action section start -->
-            <section class="step-into-action-section py-5">
-                <div class="container">
-                    <div class="step-into-action-content">
-                        <h2 class="figma_heading step-action-heading">
-                            Step Into the Action
-                        </h2>
-                        <p class="para step-action-para">
-                            Create your account today, grab your starter tokens, and see how fast the fun moves inside
-                            Rush Play.
-                        </p>
-                        <a href="signup" class="custom-btn step-action-btn">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <!-- Step Into the Action section end -->
-
-
-            <!-- newsletter section start -->
-            <section class="newsletter_sec pt-8 pb-8">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500">
-                            <div class="titlepage">
-                                <h2 class="figma_heading text-center">Get Updates First</h2>
-                                <span class="underline"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="newslettr_wrap text-center aos-init aos-animate" data-aos="fade-up"
-                        data-aos-duration="1000">
-                        <h4>
-                            Subscribe to the Rush Play newsletter for early access to events, new game launches, and
-                            exclusive token drops.
-                        </h4>
-
-                        <p id="email-message" style="color: red; display: none;"></p>
-                        <div class="newsletter_input_box">
-                            <span class="input_msg" style="background-image: url('assets/images/mail.png');">
-                            </span>
-                            <input type="text" id="newsletter-email" placeholder="Enter Your email">
-                        </div>
-
-                        <div class="explore-button">
-                            <button class="custom-btn">Subscribe</button>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- newsletter section end -->
-
-
-            <!-- faqs section start -->
-            <section class="fqas-section pt-8 pb-8 section-bg">
-                <div class="container">
-                    <div class="ko-container">
-                        <h2 class="figma_heading text-center">FAQ'<span>s</span></h2>
-                        <div class="ko-faq-accordion">
-                            <div class="ko-accordion-item">
-                                <div class="ko-accordion-item-header">Is Rush Play really free?</div>
-                                <div class="ko-accordion-item-body">
-                                    <p class="ko-accordion-item-body-content"> Yes — all games are played with virtual
-                                        tokens that have no cash value.</p>
-                                </div>
-                            </div>
-                            <div class="ko-accordion-item">
-                                <div class="ko-accordion-item-header">What makes Rush Play different?</div>
-                                <div class="ko-accordion-item-body">
-                                    <p class="ko-accordion-item-body-content"> We focus on speed and instant
-                                        entertainment. No waiting, no downloads — just play.</p>
-                                </div>
-                            </div>
-                            <div class="ko-accordion-item">
-                                <div class="ko-accordion-item-header">Do I need an account?
-                                </div>
-                                <div class="ko-accordion-item-body">
-                                    <p class="ko-accordion-item-body-content"> Yes, accounts are free to create and give
-                                        you access to daily rewards and progress tracking.</p>
-                                </div>
-                            </div>
-                            <div class="ko-accordion-item">
-                                <div class="ko-accordion-item-header">Can I win real prizes?
-                                </div>
-                                <div class="ko-accordion-item-body">
-                                    <p class="ko-accordion-item-body-content"> No. Rush Play is entertainment-only.
-                                        Tokens and rewards cannot be exchanged for money.</p>
-                                </div>
-                            </div>
-                            <div class="ko-accordion-item">
-                                <div class="ko-accordion-item-header">Is there an age restriction?
-                                </div>
-                                <div class="ko-accordion-item-body">
-                                    <p class="ko-accordion-item-body-content"> Yes, you must be 18+ or of legal age in
-                                        your region to play.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-            <!-- faqs section end -->
-
-
-            <!-- footer sec start -->
-            <footer class="footer pt-80">
-                <div class="container">
-                    <div class="footer_wrapper">
-                        <div class="footer_disclaimer ">
-                            <h4>
-                                Disclaimer
-                            </h4>
-                            <p>
-                                Rush Play is designed as an online social gaming destination for entertainment only.
-                                Games are played with digital tokens that carry no real-world cash value and cannot be
-                                exchanged for money or prizes. Access is limited to players aged 18+ or the legal age of
-                                majority in their location. Rush Play offers social casino-style fun, not gambling, and
-                                participation should always be viewed as leisure. Use of this site constitutes agreement
-                                with our Terms of Service and Privacy Policy. If at any time play feels excessive, we
-                                encourage taking a break or seeking support through responsible gaming resources.
-                            </p>
-                        </div>
-                        <div class="footer_navbar" data-aos="fade-left">
-                            <ul class="footer_list">
-                                <li class="footer_item">
-                                    <a href="responsible-play">Responsible Play
-                                    </a>
-                                </li>
-                                <li class="footer_item">
-                                    <a href="privacy-policy">Privacy Policy
-                                    </a>
-                                </li>
-                                <li class="footer_item">
-                                    <a href="terms-and-conditions">Terms & Conditions
-                                    </a>
-                                </li>
-
-                                <li class="footer_item">
-                                    <a href="cookie-policy">Cookie Policy
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="socials" data-aos="fade-right">
-                                <div class="social_wrapper">
-                                    <div class="social ">
-                                        <a href="https://www.facebook.com/" target="_blank"
-                                            class="social_link social_link--fb">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                                <path
-                                                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="social ">
-                                        <a href="https://www.instagram.com/" target="_blank"
-                                            class="social_link social_link--instagram">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                                <path
-                                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="social ">
-                                        <a href="https://x.com/" target="_blank"
-                                            class="social_link social_link--twitter">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="social ">
-                                        <a href="https://telegram.org/" target="_blank"
-                                            class="social_link social_link--telegram">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                                                <path
-                                                    d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="footer_btm">
-                            <div class="footer_btmWrapp">
-                                <div class="copyright">
-                                    <p>
-                                        Copyright © 2025. <a href="./">rush-play.games</a> All rights reserved</p>
-                                    <ion-icon name="checkmark-circle"></ion-icon>
-                                </div>
-                                <div class="ssl">
-                                    <span class="sslLink"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer sec end -->
-
-
-        </main>
-    </div>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/bootstrap.js"></script>

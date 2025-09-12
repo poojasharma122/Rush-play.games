@@ -817,7 +817,7 @@ span.input_msg {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 134px;
+  max-width: 120px;
   width: 100%;
   height: 35px;
   display: inline-block;
@@ -874,10 +874,141 @@ span.input_msg {
 
 .copyright p a {
   color: #45f882;
+  transition: 0.3s ease-in-out;
 }
 
 .copyright p a:hover {
-  color: #45f882;
+  color: #fff;
 }
 
 /* footer css end */
+
+
+/* privacy page css start */
+section.inner-bnr {
+  height: 450px;
+  background-position: 101% 31% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.inner-content h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.last-update {
+  padding: 40px 0;
+}
+
+.last-update-content {
+  background: #000;
+  padding: 30px;
+  border: 1px solid #45f882;
+}
+
+.last-update-content:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.last-update-content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.last-update-content h4 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.last-update-content ul li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.last-update-content ul li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #45f882;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  border-radius: 50%;
+}
+
+.homepage.second {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.homepage .bnr-text h1 {
+  color: #fff;
+  font-size: 42px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  font-weight: 700;
+}
+
+.homepage .bnr-text p {
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  line-height: 25px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.homepage::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 60%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: -1;
+}
+
+.custom-shape-divider-bottom-1757660682 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1757660682 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 79px;
+}
+
+.custom-shape-divider-bottom-1757660682 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* privacy page css end */
