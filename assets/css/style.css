@@ -959,13 +959,17 @@ section.inner-bnr {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .homepage .bnr-text h1 {
-  color: #fff;
+  color: #45f882;
   font-size: 42px;
   width: 100%;
-  max-width: 700px;
   margin-bottom: 20px;
   line-height: 50px;
   font-weight: 700;
@@ -1008,7 +1012,74 @@ section.inner-bnr {
 }
 
 .custom-shape-divider-bottom-1757660682 .shape-fill {
-  fill: #FFFFFF;
+  fill: #45f882;
 }
 
 /* privacy page css end */
+
+
+/* contact page css start */
+.pbmit-ihbox {
+  padding: 45px 40px 25px;
+  position: relative;
+  background: #18191c;
+  clip-path: polygon(70% 0, 75% 5%, 100% 5%, 100% 100%, 8% 100%, 0 88%, 0 0);
+  height: 100%;
+}
+
+section.need-help {
+  padding: 40px 0;
+}
+
+.pbmit-title-wrap h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pbmit-ihbox-icon svg {
+  fill: #32ff88;
+  width: 40px;
+  height: 40px;
+}
+
+.pbmit-content-wrapper {
+  padding-top: 40px;
+  margin-top: 30px;
+  border-top: 1px solid #ffffff26;
+  position: relative;
+}
+
+.pbmit-content-wrapper.pbmit-content-wrapper p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 28px;
+  margin: 0;
+}
+
+.need-help-inner h3 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.need-help-inner > p {
+  text-align: center;
+  margin: 0;
+  color: #fff;
+}
+
+.need-help-inner .row {
+  margin-top: 40px;
+}
+
+.pbmit-content-wrapper.pbmit-content-wrapper p a {
+  color: #32ff88;
+} 
+/* contact page css end */
