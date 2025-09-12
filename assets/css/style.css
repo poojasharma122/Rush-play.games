@@ -288,11 +288,13 @@ h2.figma_heading span {
   text-decoration: none;
   transition: .3s;
   position: relative;
+  padding: 8px;
 }
 
-.custom-nav ul li a:hover {
+.custom-nav ul li a:hover , .custom-nav ul li a.active {
   color: #32ff88;
   text-shadow: 0 0 5px rgba(50, 255, 136, 0.3);
+  background-color:rgba(50 255 136/0.2 )
 }
 
 /* BUTTONS */
@@ -1159,4 +1161,16 @@ section.inner-bnr {
 }
 
 
+/* about page css start */
+.pbmit-ihbox-icon img {
+  width: 60px;
+  height: 60px;
+}
 
+.pbmit-title-wrap-about h2 {
+  font-size: 2.1rem;
+  color: #32f882;
+  line-height: 1.2;
+  font-weight: 500;
+}
+/* about page css end */
