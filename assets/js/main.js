@@ -221,3 +221,5 @@ accordionItemh.forEach((accordionItemh) => {
 
 
 // faqs end
+
+

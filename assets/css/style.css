@@ -50,9 +50,6 @@ body {
   color: #45f882;
 }
 
-.section-title span {
-  color: #fff;
-}
 
 
 img {
@@ -99,6 +96,10 @@ ul {
   font-size: 1.125rem;
   font-style: normal;
   line-height: 1.2;
+}
+
+h2.figma_heading span {
+  color: #fff;
 }
 
 /* global css end here */
@@ -553,10 +554,10 @@ h2.heading-bar {
   margin-bottom: 2.5rem;
 }
 
-.step-action-btn {
+/* .step-action-btn {
   font-size: 1.2rem;
   padding: 16px 48px;
-}
+} */
 
 
 /* Step Into the Action section css end */
@@ -1019,7 +1020,7 @@ section.inner-bnr {
 }
 
 .custom-shape-divider-bottom-1757660682 .shape-fill {
-  fill: #302c2d;
+  fill: #000;
 }
 
 /* privacy page css end */
@@ -1090,3 +1091,23 @@ section.inner-bnr {
   color: #32ff88;
 } 
 /* contact page css end */
+
+.error-message.show {
+  display: block;
+  color: red;
+  font-size: 16px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}

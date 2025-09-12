@@ -79,7 +79,7 @@
     
         <!-- banner Section end-->
 
-    <section class="need-help pt-8 pb-8">
+    <section class="need-help pt-5 pb-8">
       <div class="container">
         <div class="need-help-inner">
           <h3>Need help or have a question?</h3>
@@ -157,6 +157,56 @@
         </div>
       </div>
     </section>
+
+    <!-- form section start -->
+
+
+    <section class="contact-form">
+      <div class="container">
+          <h3>contact form</h3>
+          <div class="contact-form-inner">
+              <form id="contactForm" novalidate>
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="form-clt">
+                              <input type="text" name="firstName" id="firstName" placeholder="First Name *">
+                              <div class="error-message" id="firstNameError">Please enter your first name</div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                          <div class="form-clt">
+                              <input type="text" name="lastName" id="lastName" placeholder="Last Name *">
+                              <div class="error-message" id="lastNameError">Please enter your last name</div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                          <div class="form-clt">
+                              <input type="email" name="email" id="email" placeholder="Your Email *">
+                              <div class="error-message" id="emailError">Please enter a valid email address</div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                          <div class="form-clt">
+                              <textarea name="message" id="message" placeholder="Type your message *"></textarea>
+                              <div class="error-message" id="messageError">Please enter your message</div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                          <button type="submit" class="gt-theme-btn button-cst">Send Message</button>
+                      </div>
+                  </div>
+              </form>
+             
+          </div>
+      </div>
+  </section>
+
+  <!-- form section end -->
+
   </main>
 
 
@@ -373,6 +423,115 @@
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/bootstrap.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const firstName = document.getElementById('firstName');
+        const lastName = document.getElementById('lastName');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        const successMessage = document.getElementById('successMessage');
+        
+        // Show error function
+        function showError(input, errorElement, message) {
+            input.classList.add('error');
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+            input.classList.add('shake');
+            setTimeout(() => input.classList.remove('shake'), 500);
+        }
+        
+        // Remove error function
+        function removeError(input, errorElement) {
+            input.classList.remove('error');
+            errorElement.classList.remove('show');
+        }
+        
+        // Validate email format
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Validate form on submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validate first name
+            if (firstName.value.trim() === '') {
+                showError(firstName, document.getElementById('firstNameError'), 'First name is required');
+                isValid = false;
+            } else {
+                removeError(firstName, document.getElementById('firstNameError'));
+            }
+            
+            // Validate last name
+            if (lastName.value.trim() === '') {
+                showError(lastName, document.getElementById('lastNameError'), 'Last name is required');
+                isValid = false;
+            } else {
+                removeError(lastName, document.getElementById('lastNameError'));
+            }
+            
+            // Validate email
+            if (email.value.trim() === '') {
+                showError(email, document.getElementById('emailError'), 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, document.getElementById('emailError'), 'Please enter a valid email address');
+                isValid = false;
+            } else {
+                removeError(email, document.getElementById('emailError'));
+            }
+            
+            // Validate message
+            if (message.value.trim() === '') {
+                showError(message, document.getElementById('messageError'), 'Message is required');
+                isValid = false;
+            } else {
+                removeError(message, document.getElementById('messageError'));
+            }
+            
+            // If form is valid, show success message
+            if (isValid) {
+                successMessage.classList.add('show');
+                form.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }
+        });
+        
+        // Real-time validation as user types
+        firstName.addEventListener('input', function() {
+            if (firstName.value.trim() !== '') {
+                removeError(firstName, document.getElementById('firstNameError'));
+            }
+        });
+        
+        lastName.addEventListener('input', function() {
+            if (lastName.value.trim() !== '') {
+                removeError(lastName, document.getElementById('lastNameError'));
+            }
+        });
+        
+        email.addEventListener('input', function() {
+            if (email.value.trim() !== '' && isValidEmail(email.value.trim())) {
+                removeError(email, document.getElementById('emailError'));
+            }
+        });
+        
+        message.addEventListener('input', function() {
+            if (message.value.trim() !== '') {
+                removeError(message, document.getElementById('messageError'));
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

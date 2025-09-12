@@ -88,3 +88,35 @@
       }
       .menu-overlay.active { opacity:1; visibility:visible; }
     }
+
+
+    @media screen and (max-width:767px) {
+
+      .footer_disclaimer {
+        padding: 20px 80px;
+        clip-path: none;
+    }
+    }
+
+
+
+    @media screen and (max-width:575px) {
+      .footer_disclaimer {
+        padding: 20px 30px;
+    }
+    }
+
+
+
+    @media(max-width:425px) {
+      .footer_btmWrapp {
+          flex-wrap: wrap;
+      }
+      .ssl {
+      width: 70%;
+  }
+
+  .footer_list {
+    gap: 2rem;
+}
+  }
