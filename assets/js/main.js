@@ -2,31 +2,38 @@
 const menuToggle=document.getElementById("menuToggle");
 const customNav=document.getElementById("customNav");
 const menuOverlay=document.getElementById("menuOverlay");
-const toggleIcon=menuToggle.querySelector("i");
+const toggleIcon=menuToggle?menuToggle.querySelector("i"):null;
 
-menuToggle.addEventListener("click",()=>{
-  customNav.classList.toggle("active");
-  menuOverlay.classList.toggle("active");
-  toggleIcon.classList.toggle("fa-bars");
-  toggleIcon.classList.toggle("fa-times");
-});
-menuOverlay.addEventListener("click",()=>{
-  customNav.classList.remove("active");
-  menuOverlay.classList.remove("active");
-  toggleIcon.classList.add("fa-bars");
-  toggleIcon.classList.remove("fa-times");
-});
+if(menuToggle&&customNav&&toggleIcon){
+  menuToggle.addEventListener("click",()=>{
+    customNav.classList.toggle("active");
+    if(menuOverlay){menuOverlay.classList.toggle("active");}
+    toggleIcon.classList.toggle("fa-bars");
+    toggleIcon.classList.toggle("fa-times");
+  });
+}
+if(menuOverlay&&customNav&&toggleIcon){
+  menuOverlay.addEventListener("click",()=>{
+    customNav.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    toggleIcon.classList.add("fa-bars");
+    toggleIcon.classList.remove("fa-times");
+  });
+}
 
 // Modal functionality
-const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-const signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
+const loginModalEl=document.getElementById('loginModal');
+const signupModalEl=document.getElementById('signupModal');
+const loginModal = loginModalEl ? new bootstrap.Modal(loginModalEl) : null;
+const signupModal = signupModalEl ? new bootstrap.Modal(signupModalEl) : null;
 
 // Login button click handlers
 document.querySelectorAll('.custom-btn').forEach(btn => {
   btn.addEventListener('click', function() {
-    if (this.textContent.trim() === 'LOGIN') {
+    const txt=this.textContent.trim();
+    if (txt === 'LOGIN' && loginModal) {
       loginModal.show();
-    } else if (this.textContent.trim() === 'SIGN UP') {
+    } else if (txt === 'SIGN UP' && signupModal) {
       signupModal.show();
     }
   });
@@ -57,7 +64,9 @@ function clearError(inputId, errorId) {
 }
 
 // Login form validation
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+const loginFormEl=document.getElementById('loginForm');
+if(loginFormEl){
+loginFormEl.addEventListener('submit', function(e) {
   e.preventDefault();
   
   const email = document.getElementById('loginEmail').value;
@@ -90,20 +99,24 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   if (isValid) {
     // Simulate login process
     alert('Login successful! Welcome to Rush Play Game!');
-    loginModal.hide();
+    if(loginModal){loginModal.hide();}
     this.reset();
   }
 });
+}
 
 // Signup form validation
-document.getElementById('signupForm').addEventListener('submit', function(e) {
+const signupFormEl=document.getElementById('signupForm');
+if(signupFormEl){
+signupFormEl.addEventListener('submit', function(e) {
   e.preventDefault();
   
   const name = document.getElementById('signupName').value;
   const email = document.getElementById('signupEmail').value;
   const password = document.getElementById('signupPassword').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
-  const agreeTerms = document.getElementById('agreeTerms').checked;
+  const agreeTermsEl = document.getElementById('agreeTerms');
+  const agreeTerms = agreeTermsEl ? agreeTermsEl.checked : true;
   
   let isValid = true;
 
@@ -112,7 +125,9 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
   clearError('signupEmail', 'signupEmailError');
   clearError('signupPassword', 'signupPasswordError');
   clearError('confirmPassword', 'confirmPasswordError');
-  clearError('agreeTerms', 'agreeTermsError');
+  if(agreeTermsEl){
+    clearError('agreeTerms', 'agreeTermsError');
+  }
 
   // Validate name
   if (!name) {
@@ -150,8 +165,8 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
     isValid = false;
   }
 
-  // Validate terms agreement
-  if (!agreeTerms) {
+  // Validate terms agreement (only if checkbox exists on page)
+  if (agreeTermsEl && !agreeTerms) {
     showError('agreeTerms', 'agreeTermsError', 'You must agree to the terms and conditions');
     isValid = false;
   }
@@ -159,22 +174,25 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
   if (isValid) {
     // Simulate signup process
     alert('Account created successfully! Welcome to Rush Play Game!');
-    signupModal.hide();
+    if(signupModal){signupModal.hide();}
     this.reset();
   }
 });
+}
 
 // Real-time validation for signup form
-document.getElementById('confirmPassword').addEventListener('input', function() {
-  const password = document.getElementById('signupPassword').value;
-  const confirmPassword = this.value;
-  
-  if (confirmPassword && password !== confirmPassword) {
-    showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
-  } else {
-    clearError('confirmPassword', 'confirmPasswordError');
-  }
-});
+const confirmPasswordEl=document.getElementById('confirmPassword');
+if(confirmPasswordEl){
+  confirmPasswordEl.addEventListener('input', function() {
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = this.value;
+    if (confirmPassword && password !== confirmPassword) {
+      showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
+    } else {
+      clearError('confirmPassword', 'confirmPasswordError');
+    }
+  });
+}
   
 // Header JS End
 
@@ -188,45 +206,65 @@ AOS.init({
 // cursor js start
 
 $(window).mousemove(function (e) {
-	$(".ring").css(
-		"transform",
-		`translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`
-	);
+  $(".ring").css(
+    "transform",
+    `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`
+  );
 });
 
 // cursor js end
 
 
-// faqs start
-
-document.addEventListener('DOMContentLoaded', function() {
-  const accordionHeaders = document.querySelectorAll(".ko-accordion-item-header");
-
-  accordionHeaders.forEach((header) => {
+// fqas start
+const accordionItemh = document.querySelectorAll(".ko-accordion-item-header");
+if(accordionItemh && accordionItemh.length){
+  accordionItemh.forEach((header) => {
     header.addEventListener("click", () => {
-      // Close all other accordion items
-      accordionHeaders.forEach((otherHeader) => {
-        if (otherHeader !== header) {
-          otherHeader.classList.remove("active");
-          const otherBody = otherHeader.nextElementSibling;
-          otherBody.style.maxHeight = 0;
-        }
-      });
-
-      // Toggle current accordion item
       header.classList.toggle("active");
-
-      const accordionItemBody = header.nextElementSibling;
+      const body = header.nextElementSibling;
       if (header.classList.contains("active")) {
-        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+        body.style.maxHeight = body.scrollHeight + "px";
       } else {
-        accordionItemBody.style.maxHeight = 0;
+        body.style.maxHeight = 0;
       }
     });
   });
-});
+}
 
 
 // faqs end
 
-
+// Slider JS Start
+$('.home_games_slider').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  autoplay: true,
+  slidesToShow: 3,      
+  slidesToScroll: 1, 
+  responsive: [
+      {
+          breakpoint: 1199,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+          }
+      },
+      {
+          breakpoint: 575,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ],
+  prevArrow: `<button class="slick-prev custom-arrow custom-prev" aria-label="Previous slide">
+                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#fcee0a" stroke-width="1.5" d="M31 71L1 35 31 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>`,
+  nextArrow: `<button class="slick-next custom-arrow custom-next" aria-label="Next slide">
+                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#fcee0a" stroke-width="1.5" d="M1 71l30-36L1 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>`
+});
+// Slider JS End

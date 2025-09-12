@@ -609,6 +609,10 @@ h2.heading-bar {
   margin: 3.125rem auto 1.25rem auto;
 }
 
+.newsletter_input_box ::placeholder {
+  color: #fff;
+}
+
 .newsletter_input_box input {
   max-width: 40.625rem;
   width: 100%;
@@ -638,12 +642,12 @@ span.input_msg {
 
 /* faqs section css start */
 
-.ko-faq-section h2 {
+/* .ko-faq-section h2 {
   text-align: center;
   font-size: 42px;
   line-height: 52px;
   margin-bottom: 10px;
-}
+} */
 
 .ko-container {
   width: 100%;
@@ -1174,3 +1178,328 @@ section.inner-bnr {
   font-weight: 500;
 }
 /* about page css end */
+
+
+/* what make diffrent section css start */
+.about-intro .about-figure{
+  width:100%;
+  height:360px;
+  border-radius:18px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 6px 28px rgba(0,0,0,.35)
+}
+.about-intro .float-badge{
+  position:absolute;
+  transform:translate(18px,-18px);
+  background:#18191c;
+  border:2px solid #2eff88;
+  border-radius:14px;
+  padding:10px 14px;
+  box-shadow:0 6px 24px #2eff8870
+}
+.about-intro .float-badge img{
+  height:32px;
+  width:auto
+}
+.mission-box{
+  margin-top:18px;
+  padding:18px;
+  border:1px dashed #2eff88;
+  border-radius:14px;
+  background:#101114
+}
+.rp-checklist{
+  list-style:none;
+  padding:0;
+  margin:0
+}
+.rp-checklist li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #18191c;
+  border: 1px solid #ffffff42;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.rp-checklist .ic{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  background:url('assets/images/chevron.png') center/contain no-repeat;
+  filter:brightness(0) saturate(100%) invert(84%) sepia(57%) saturate(712%) hue-rotate(71deg) brightness(106%) contrast(98%)
+}
+.diff-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px
+}
+.diff-card{
+  background:#18191c;
+  border:1px solid #262a33;
+  border-radius:16px;
+  padding:18px
+}
+.why-graphic{
+  height:220px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2eff88 0%,#0f1218 50%,#2eff88 100%);
+  opacity:.2
+}
+.promise-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:24px
+}
+.promise-card{
+  background:#18191c;
+  border:1px solid #262a33;
+  border-radius:16px;
+  padding:22px;
+  text-align:center
+}
+.cta-ahead .ahead-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:#18191c;
+  border:1px solid #2eff88;
+  border-radius:16px;
+  padding:22px 24px
+}
+
+
+.about-diff-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+}
+
+
+.rush-edge-section-player {
+  background: #000;
+}
+
+
+section.rush-edge-section-player .benefit-card figure img {
+  width: 100px;
+  background-color: #000;
+  height: 80px;
+  padding: 0 10px;
+} 
+
+/* rewards page css start */
+
+.rewards-art{
+  height:220px;
+  border-radius:18px;
+  background:radial-gradient(120px 120px at 20% 40%,#2eff88 0%,transparent 60%),radial-gradient(160px 160px at 80% 60%,#2eff8840 0%,transparent 60%),#101114;
+  border:1px solid #2eff8820
+}
+.rw-card{
+  background:#18191c;
+  border:1px solid #262a33;
+  border-radius:16px;
+  padding:20px;
+  height:100%
+}
+.rw-card.highlight{
+  border-color:#2eff88;
+  box-shadow:0 8px 30px #2eff8833
+}
+.rw-card h5{
+  color:#2eff88;
+  margin-bottom:6px
+}
+.rw-list{
+  list-style:none;
+  margin:10px 0 0 0;
+  padding:0
+}
+.rw-list li{
+  position:relative;
+  padding-left:26px;
+  color:#ABABAB;
+  margin:8px 0
+}
+.rw-list li:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:6px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#2eff88;
+  box-shadow:0 0 0 3px rgba(46,255,136,.15)
+}
+.rewards-cta .cta-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:#18191c;
+  border:1px solid #2eff88;
+  border-radius:16px;
+  padding:22px 24px
+}
+@media(max-width:767px){
+  .rewards-cta .cta-wrap{
+      flex-direction:column;
+      align-items:flex-start
+  }
+}
+
+/* rewards page css end */
+
+
+/* play without limits section css start  */
+.home_games_slider {
+  width: calc(100% - 120px);
+  margin: 0 auto;
+}
+
+.slick-list.draggable {
+  height: 20.75rem;
+
+}
+
+body .slick-track {
+  height: 100%;
+}
+
+.slick-slide {
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.home_games_slides {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+.lounge_exp_home {
+  overflow: hidden;
+}
+
+.slide_content {
+  text-align: center;
+  padding: 0 0.9375rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 2.1875rem;
+  opacity: 1;
+}
+
+button.slick-prev {
+  left: -80px;
+  z-index: 1;
+}
+
+button.slick-next {
+  right: -80px;
+  z-index: 1;
+}
+
+.slick-arrow {
+  width: auto !important;
+  height: auto !important;
+}
+
+.slick-prev svg,
+.slick-next svg {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: #fff;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.slick-prev:hover svg,
+.slick-next:hover svg {
+  opacity: 1;
+  transform: scale(1.05);
+  fill: #fcee0a;
+}
+
+.game_card {
+  position: relative;
+  width: 100%;
+  height: 16rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(252 238 10/0.18);
+  transition: transform 0.3s ease;
+}
+
+.game_card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  /* Behind the button */
+}
+
+.game_card_btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 40px);
+  opacity: 0;
+  transition:
+      opacity 0.3s cubic-bezier(.77, 0, .18, 1),
+      transform 0.3s cubic-bezier(.77, 0, .18, 1);
+  background: #fcee0a;
+  color: #000;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  /* Above overlay */
+}
+
+.game_card:hover::before,
+.game_card:focus-within::before {
+  opacity: 1;
+}
+
+.game_card:hover .game_card_btn,
+.game_card:focus-within .game_card_btn {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+/* play without limits section css end  */
