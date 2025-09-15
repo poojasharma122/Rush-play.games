@@ -1500,6 +1500,10 @@ button.slick-next {
   overflow: hidden;
   box-shadow: 0 8px 15px rgba(45 255 136/0.18);
   transition: transform 0.3s ease;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #ffffff4d;
 }
 
 .game_card::before {
@@ -1560,7 +1564,7 @@ button.slick-next {
   height: 15.75rem;
   border-radius: 1.25rem;
   overflow: hidden;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
@@ -1569,6 +1573,7 @@ button.slick-next {
   align-items: flex-end;
   margin-bottom: 2rem;
   box-shadow: 0 8px 15px rgba(45 255 136 / 0.18);
+  border: 1px solid #ffffff42;
 }
 
 .game-card:hover {
