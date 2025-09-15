@@ -402,7 +402,7 @@ h2.figma_heading span {
 .banner_section_second_img img {
   /* width: 350px; */
   /* height: 470px; */
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .banner_content {
@@ -1336,10 +1336,12 @@ section.rush-edge-section-player .benefit-card figure img {
 /* rewards page css start */
 
 .rewards-art {
-  height: 220px;
+  height: 400px;
   border-radius: 18px;
-  background: radial-gradient(120px 120px at 20% 40%, #2eff88 0%, transparent 60%), radial-gradient(160px 160px at 80% 60%, #2eff8840 0%, transparent 60%), #101114;
-  border: 1px solid #2eff8820
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
 .rw-card {
@@ -1654,3 +1656,12 @@ button.slick-next {
 }
 
 /* main game page css end */
+
+
+.homepage.second .custom-shape-divider-bottom-1757660682 .shape-fill {
+  fill: #302c2d;
+}
+
+.need-help .custom-shape-divider-bottom-1757660682 .shape-fill{
+  fill: #000;
+}
