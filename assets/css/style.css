@@ -50,7 +50,7 @@ body {
   color: #45f882;
 }
 
-.main_content{
+.main_content {
   overflow: hidden;
 }
 
@@ -88,7 +88,7 @@ ul {
   color: #2eff88;
   font-weight: 600;
   line-height: 1.4;
-  font-size: 3.652rem;
+  font-size: 3rem;
   margin-bottom: 30px;
 }
 
@@ -293,10 +293,11 @@ h2.figma_heading span {
   padding: 8px;
 }
 
-.custom-nav ul li a:hover , .custom-nav ul li a.active {
+.custom-nav ul li a:hover,
+.custom-nav ul li a.active {
   color: #32ff88;
   text-shadow: 0 0 5px rgba(50, 255, 136, 0.3);
-  background-color:rgba(50 255 136/0.2 )
+  background-color: rgba(50 255 136/0.2)
 }
 
 /* BUTTONS */
@@ -934,12 +935,13 @@ section.inner-bnr {
 }
 
 .last-update-content p a {
-    color: #32ff88;
+  color: #32ff88;
 }
 
 .last-update-content p a:hover {
   color: #fff;
 }
+
 .last-update-content h4 {
   color: #fff;
   font-size: 28px;
@@ -1085,7 +1087,7 @@ section.inner-bnr {
   margin-bottom: 10px;
 }
 
-.need-help-inner > p {
+.need-help-inner>p {
   text-align: center;
   margin: 0;
   color: #fff;
@@ -1097,17 +1099,20 @@ section.inner-bnr {
 
 .pbmit-content-wrapper.pbmit-content-wrapper p a {
   color: #32ff88;
-} 
+}
 
 
 .contact-form {
   background: #000;
   padding: 0 0 40px 0;
 }
-.form-clt{
-  margin-bottom:16px;
+
+.form-clt {
+  margin-bottom: 16px;
 }
-.form-clt input,textarea#message {
+
+.form-clt input,
+textarea#message {
   display: block;
   width: 100%;
   font-size: 17px;
@@ -1144,6 +1149,7 @@ section.inner-bnr {
 .error-message {
   display: none;
 }
+
 /* contact page css end */
 
 .error-message.show {
@@ -1151,9 +1157,15 @@ section.inner-bnr {
   color: red;
   font-size: 16px;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .shake {
@@ -1161,9 +1173,19 @@ section.inner-bnr {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 
@@ -1179,43 +1201,49 @@ section.inner-bnr {
   line-height: 1.2;
   font-weight: 500;
 }
+
 /* about page css end */
 
 
 /* what make diffrent section css start */
-.about-intro .about-figure{
-  width:100%;
-  height:360px;
-  border-radius:18px;
-  background-size:cover;
-  background-position:center;
-  box-shadow:0 6px 28px rgba(0,0,0,.35)
+.about-intro .about-figure {
+  width: 100%;
+  height: 360px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, .35)
 }
-.about-intro .float-badge{
-  position:absolute;
-  transform:translate(18px,-18px);
-  background:#18191c;
-  border:2px solid #2eff88;
-  border-radius:14px;
-  padding:10px 14px;
-  box-shadow:0 6px 24px #2eff8870
+
+.about-intro .float-badge {
+  position: absolute;
+  transform: translate(18px, -18px);
+  background: #18191c;
+  border: 2px solid #2eff88;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 24px #2eff8870
 }
-.about-intro .float-badge img{
-  height:32px;
-  width:auto
+
+.about-intro .float-badge img {
+  height: 32px;
+  width: auto
 }
-.mission-box{
-  margin-top:18px;
-  padding:18px;
-  border:1px dashed #2eff88;
-  border-radius:14px;
-  background:#101114
+
+.mission-box {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px dashed #2eff88;
+  border-radius: 14px;
+  background: #101114
 }
-.rp-checklist{
-  list-style:none;
-  padding:0;
-  margin:0
+
+.rp-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0
 }
+
 .rp-checklist li {
   display: flex;
   gap: 12px;
@@ -1227,52 +1255,59 @@ section.inner-bnr {
   margin-bottom: 12px;
   color: #fff;
 }
-.rp-checklist .ic{
-  width:18px;
-  height:18px;
-  flex:0 0 18px;
-  background:url('assets/images/chevron.png') center/contain no-repeat;
-  filter:brightness(0) saturate(100%) invert(84%) sepia(57%) saturate(712%) hue-rotate(71deg) brightness(106%) contrast(98%)
+
+.rp-checklist .ic {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  background: url('assets/images/chevron.png') center/contain no-repeat;
+  filter: brightness(0) saturate(100%) invert(84%) sepia(57%) saturate(712%) hue-rotate(71deg) brightness(106%) contrast(98%)
 }
-.diff-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px
 }
-.diff-card{
-  background:#18191c;
-  border:1px solid #262a33;
-  border-radius:16px;
-  padding:18px
+
+.diff-card {
+  background: #18191c;
+  border: 1px solid #262a33;
+  border-radius: 16px;
+  padding: 18px
 }
-.why-graphic{
-  height:220px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#2eff88 0%,#0f1218 50%,#2eff88 100%);
-  opacity:.2
+
+.why-graphic {
+  height: 220px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #2eff88 0%, #0f1218 50%, #2eff88 100%);
+  opacity: .2
 }
-.promise-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:24px
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px
 }
-.promise-card{
-  background:#18191c;
-  border:1px solid #262a33;
-  border-radius:16px;
-  padding:22px;
-  text-align:center
+
+.promise-card {
+  background: #18191c;
+  border: 1px solid #262a33;
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center
 }
-.cta-ahead .ahead-wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  background:#18191c;
-  border:1px solid #2eff88;
-  border-radius:16px;
-  padding:22px 24px
+
+.cta-ahead .ahead-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #18191c;
+  border: 1px solid #2eff88;
+  border-radius: 16px;
+  padding: 22px 24px
 }
 
 
@@ -1296,67 +1331,75 @@ section.rush-edge-section-player .benefit-card figure img {
   background-color: #000;
   height: 80px;
   padding: 0 10px;
-} 
+}
 
 /* rewards page css start */
 
-.rewards-art{
-  height:220px;
-  border-radius:18px;
-  background:radial-gradient(120px 120px at 20% 40%,#2eff88 0%,transparent 60%),radial-gradient(160px 160px at 80% 60%,#2eff8840 0%,transparent 60%),#101114;
-  border:1px solid #2eff8820
+.rewards-art {
+  height: 220px;
+  border-radius: 18px;
+  background: radial-gradient(120px 120px at 20% 40%, #2eff88 0%, transparent 60%), radial-gradient(160px 160px at 80% 60%, #2eff8840 0%, transparent 60%), #101114;
+  border: 1px solid #2eff8820
 }
-.rw-card{
-  background:#18191c;
-  border:1px solid #262a33;
-  border-radius:16px;
-  padding:20px;
-  height:100%
+
+.rw-card {
+  background: #18191c;
+  border: 1px solid #262a33;
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%
 }
-.rw-card.highlight{
-  border-color:#2eff88;
-  box-shadow:0 8px 30px #2eff8833
+
+.rw-card.highlight {
+  border-color: #2eff88;
+  box-shadow: 0 8px 30px #2eff8833
 }
-.rw-card h5{
-  color:#2eff88;
-  margin-bottom:6px
+
+.rw-card h5 {
+  color: #2eff88;
+  margin-bottom: 6px
 }
-.rw-list{
-  list-style:none;
-  margin:10px 0 0 0;
-  padding:0
+
+.rw-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0
 }
-.rw-list li{
-  position:relative;
-  padding-left:26px;
-  color:#ABABAB;
-  margin:8px 0
+
+.rw-list li {
+  position: relative;
+  padding-left: 26px;
+  color: #ABABAB;
+  margin: 8px 0
 }
-.rw-list li:before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:6px;
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background:#2eff88;
-  box-shadow:0 0 0 3px rgba(46,255,136,.15)
+
+.rw-list li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2eff88;
+  box-shadow: 0 0 0 3px rgba(46, 255, 136, .15)
 }
-.rewards-cta .cta-wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  background:#18191c;
-  border:1px solid #2eff88;
-  border-radius:16px;
-  padding:22px 24px
+
+.rewards-cta .cta-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #18191c;
+  border: 1px solid #2eff88;
+  border-radius: 16px;
+  padding: 22px 24px
 }
-@media(max-width:767px){
-  .rewards-cta .cta-wrap{
-      flex-direction:column;
-      align-items:flex-start
+
+@media(max-width:767px) {
+  .rewards-cta .cta-wrap {
+    flex-direction: column;
+    align-items: flex-start
   }
 }
 
@@ -1480,8 +1523,8 @@ button.slick-next {
   transform: translate(-50%, 40px);
   opacity: 0;
   transition:
-      opacity 0.3s cubic-bezier(.77, 0, .18, 1),
-      transform 0.3s cubic-bezier(.77, 0, .18, 1);
+    opacity 0.3s cubic-bezier(.77, 0, .18, 1),
+    transform 0.3s cubic-bezier(.77, 0, .18, 1);
   background: #45f882;
   color: #000;
   border: none;
@@ -1505,4 +1548,80 @@ button.slick-next {
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
 /* play without limits section css end  */
+
+
+/* game page css start */
+/* Games CSS Start */
+.game-card {
+  position: relative;
+  width: 100%;
+  height: 15.75rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  box-shadow: rgb(252 238 10/0.5) 0px 3px 8px;
+}
+
+.game-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.game-card .card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5.5rem;
+  background: rgba(0 0 0/0.5);
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  pointer-events: none;
+  height: 100%;
+}
+
+.game-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.game-card .play-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, -60px) scale(0.8);
+  opacity: 0;
+  transition:
+      opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  z-index: 2;
+  min-width: 9.375rem;
+}
+
+.game-card:hover .play-btn {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1.08);
+}
+
+.game-card .butn:hover {
+  color: #fff;
+}
+
+.anchor_hover {
+  font-size: inherit;
+}
+
+.game_heading {
+  text-align: center;
+}
+
+/* game page css end */
