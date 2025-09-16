@@ -1567,7 +1567,7 @@ button.slick-next {
   transition: box-shadow 0.3s;
   display: flex;
   align-items: flex-end;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   box-shadow: 0 8px 15px rgba(45 255 136 / 0.18);
   border: 1px solid #ffffff42;
 }
@@ -1674,13 +1674,13 @@ button.slick-next {
   background-repeat: no-repeat;
 }
 
-.banner_section_home:before {
+.banner_section_home::before {
   position: absolute;
   content: '';
   inset: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0 0 0/40%);
+  background-color: rgba(0 0 0/60%);
   z-index: -1;
   }
 
