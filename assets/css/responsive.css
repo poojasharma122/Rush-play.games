@@ -111,6 +111,10 @@
   .about-intro .about-figure {
     height: 280px
   }
+
+  .banner_section_second_img img {
+    max-width: 300px;
+}
 }
 
 
@@ -120,6 +124,10 @@
     padding: 20px 80px;
     clip-path: none;
   }
+
+  .banner_content h1 {
+    font-size: 3rem;
+}
 }
 
 

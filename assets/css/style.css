@@ -1665,3 +1665,35 @@ button.slick-next {
 .need-help .custom-shape-divider-bottom-1757660682 .shape-fill{
   fill: #000;
 }
+
+.banner_section_home {
+  background-size: cover;
+  background-position: center;
+  height: 45.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+
+.banner_section_home:before {
+  position: absolute;
+  content: '';
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0 0 0/40%);
+  z-index: -1;
+  }
+
+  .banner_text h1 {
+    font-size: 5rem;
+    color: #45f882;
+    line-height: 4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
