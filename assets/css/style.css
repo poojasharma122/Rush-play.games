@@ -399,12 +399,6 @@ h2.figma_heading span {
 
 
 
-.banner_section_second_img img {
-  /* width: 350px; */
-  /* height: 470px; */
-  max-width: 400px;
-}
-
 .banner_content {
   margin-top: 120px;
 }
@@ -1686,14 +1680,40 @@ button.slick-next {
   inset: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0 0 0/40%);
+  /* background-color: rgba(0 0 0/40%); */
   z-index: -1;
   }
 
   .banner_text h1 {
     font-size: 5rem;
     color: #45f882;
-    line-height: 4rem;
+    line-height: 150%;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.banner_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: start;
+  max-width: 521px;
+  /* margin-left: 50px; */
+}
+
+.banner_section_second_img img {
+  width: 100%;
+  height: 470px;
+  /* max-width: 400px; */
+}
+
+
+.banner_section_home .custom-shape-divider-bottom-1757660682 .shape-fill {
+  fill: #302c2d; 
+}
+
+.banner_section_second_img {
+  position: relative;
 }
