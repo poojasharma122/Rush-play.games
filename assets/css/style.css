@@ -471,9 +471,9 @@ h2.figma_heading span {
 }
 
 .benefit-card figure img {
-  width: 100px;
+  width: 80px;
   background-color: #302c2d;
-  height: 80px;
+  height: 70px;
   padding: 0 10px;
 }
 
@@ -1327,9 +1327,9 @@ textarea#message {
 
 
 section.rush-edge-section-player .benefit-card figure img {
-  width: 100px;
+  width: 80px;
   background-color: #000;
-  height: 80px;
+  height: 60px;
   padding: 0 10px;
 }
 
