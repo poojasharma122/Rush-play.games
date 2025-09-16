@@ -998,7 +998,7 @@ section.inner-bnr {
 
 .homepage-second::after {
   content: "";
-  background-color: rgba(0, 0, 0, 60%);
+  background-color: rgba(0, 0, 0, 40%);
   position: absolute;
   width: 100%;
   height: 100%;
