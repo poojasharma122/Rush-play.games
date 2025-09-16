@@ -964,7 +964,7 @@ section.inner-bnr {
   border-radius: 50%;
 }
 
-.homepage.second {
+.homepage-second {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -978,16 +978,16 @@ section.inner-bnr {
   text-align: center;
 }
 
-.homepage .bnr-text h1 {
+.homepage-second .bnr-text h1 {
   color: #45f882;
-  font-size: 42px;
+  font-size: 50px;
   width: 100%;
   margin-bottom: 20px;
   line-height: 50px;
   font-weight: 700;
 }
 
-.homepage .bnr-text p {
+.homepage-second .bnr-text p {
   color: #fff;
   font-size: 16px;
   width: 100%;
@@ -996,7 +996,7 @@ section.inner-bnr {
   margin-bottom: 20px;
 }
 
-.homepage::after {
+.homepage-second::after {
   content: "";
   background-color: rgba(0, 0, 0, 60%);
   position: absolute;
@@ -1652,7 +1652,7 @@ button.slick-next {
 /* main game page css end */
 
 
-.homepage.second .custom-shape-divider-bottom-1757660682 .shape-fill {
+.homepage-second .custom-shape-divider-bottom-1757660682 .shape-fill {
   fill: #302c2d;
 }
 
@@ -1714,6 +1714,3 @@ button.slick-next {
   fill: #302c2d; 
 }
 
-.banner_section_second_img {
-  position: relative;
-}
