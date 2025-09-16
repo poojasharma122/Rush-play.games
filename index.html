@@ -331,7 +331,7 @@
 
 
         <!-- newsletter section start -->
-        <section class="newsletter_sec pt-8 pb-8">
+        <!-- <section class="newsletter_sec pt-8 pb-8">
             <div class="container">
                 <div class="row">
                     <div class="col-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500">
@@ -361,8 +361,40 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
+        <section class="newsletter_sec pt-8 pb-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="titlepage">
+                            <h2 class="figma_heading text-center">Get Updates First</h2>
+                            <span class="underline"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="newslettr_wrap text-center aos-init aos-animate" novalidate data-aos="fade-up"
+                    data-aos-duration="1000">
+                    <h4>
+                        Subscribe to the Rush Play newsletter for early access to events, new game launches, and
+                        exclusive token drops.
+                    </h4>
+        
+                    <p id="email-message" class="email-msg"></p>
+                    <div class="newsletter_input_box">
+                        <span class="input_msg" style="background-image: url('assets/images/mail.png');"></span>
+                        <input type="text" id="newsletter-email" placeholder="Enter Your Email">
+                    </div>
+        
+                    <div class="explore-button">
+                        <button class="custom-btn" id="subscribe-btn">Subscribe</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        
         <!-- newsletter section end -->
 
 
@@ -610,6 +642,37 @@
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.getElementById("subscribe-btn").addEventListener("click", function (e) {
+            e.preventDefault(); // stop page reload
+            const emailInput = document.getElementById("newsletter-email");
+            const message = document.getElementById("email-message");
+            const email = emailInput.value.trim();
+        
+            // Regex for email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+            // Reset styles
+            emailInput.classList.remove("error", "success");
+            message.classList.remove("error", "success");
+        
+            if (email === "") {
+                message.textContent = "⚠ Please enter your email address.";
+                message.classList.add("error");
+                emailInput.classList.add("error");
+            } else if (!emailPattern.test(email)) {
+                message.textContent = "❌ Please enter a valid email address.";
+                message.classList.add("error");
+                emailInput.classList.add("error");
+            } else {
+                message.textContent = "✅ Thank you for subscribing!";
+                message.classList.add("success");
+                emailInput.classList.add("success");
+                emailInput.value = ""; // clear input
+            }
+        });
+        </script>
 </body>
 
 </html>

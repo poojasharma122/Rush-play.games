@@ -1809,3 +1809,36 @@ button[type="submit"]:not(:disabled) {
   cursor: pointer !important;
 }
 
+
+.email-msg {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+}
+
+/* Success */
+.email-msg.success {
+  color: #28a745; /* Green */
+  display: block;
+}
+
+/* Error */
+.email-msg.error {
+
+  display: block;
+}
+
+/* Input error style */
+.newsletter_input_box input.error {
+  border: 2px solid #dc3545;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+/* Input success style */
+.newsletter_input_box input.success {
+  border: 2px solid #28a745;
+  outline: none;
+}
+
