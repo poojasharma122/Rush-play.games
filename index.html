@@ -112,16 +112,23 @@
             </div>
         </section> -->
 
-        <section class="banner_section_home" style="background-image: url(assets/images/breadcrumb_bg01.jpg);">
+        <section class="banner_section_home" style="background-image: url(assets/images/hero-background0img.jpg);">
+            <img src="assets/images/joystick.png" alt="" style="animation: joystickSpin 4s linear infinite;">
+            <style>
+                @keyframes joystickSpin {
+                    0% { transform: rotate(0deg);}
+                    100% { transform: rotate(360deg);}
+                }
+            </style>
             <div class="container">
                 <div class="home_content_home" data-aos="zoom-in" data-aos-duration="1200">
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-12">
                     <div class="banner_text">
                         <h1>
-                            Feel the Rush
+                            Feel the <span>Rush</span>
                         </h1>
-                        <p class="para">
+                        <p>
                             Rush Play isn’t about waiting around — it’s about instant thrills. Fast
                             spins, quick wins, and nonstop entertainment, all in one digital arena built
                             for speed.
@@ -131,10 +138,18 @@
                     
                     </div>
                     <div class="col-lg-6 col-md-12 col-12" data-aos="zoom-in" data-aos-duration="1600">
-                        <div class="banner_section_second_img">
-                            <img src="assets/images/hero-banner.png" alt="">
-                            
+                        <div class="banner_section_main">
+                        <div class="banner_section_right" style="background-image: url('assets/images/main-hero.png');">
                         </div>
+                        <img src="assets/images/mission-img1.png" alt="" style="animation: floatMission 3s ease-in-out infinite;">
+                        <style>
+                            @keyframes floatMission {
+                                0% { transform: translateY(0);}
+                                50% { transform: translateY(-20px);}
+                                100% { transform: translateY(0);}
+                            }
+                        </style>
+                    </div>
                     </div>
                 </div>
                 </div>
