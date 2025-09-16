@@ -1755,3 +1755,18 @@ button.slick-next {
   height: 100px;
 }
 
+.rewards-grid-inner p {
+  padding-bottom: 30px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 400;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+.rush-edge-heading h2 {
+  padding-bottom: 15px;
+}
+

@@ -112,6 +112,14 @@
     height: 280px
   }
 
+  .banner_text {
+    text-align: center;
+    max-width: 100%;
+}
+
+.banner_text h1 {
+  font-size: 4rem;
+}
 
 }
 
@@ -131,6 +139,28 @@
   font-size: 44px;
 }
 
+.last-update-content h4 {
+  font-size: 22px;
+}
+
+.home_games_slider {
+  position: relative;
+  padding-bottom: 3.5rem;
+  width: 100%;
+}
+
+.slick-prev svg, .slick-next svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.banner_section_right {
+  height: 400px;
+}
+
+.banner_text h1 {
+  font-size: 3.2rem;
+}
 
 }
 
@@ -152,6 +182,15 @@
 .pb-8 {
     padding-bottom: 3rem !important;
 } 
+
+.slick-prev svg, .slick-next svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.banner_section_right {
+  height: 370px;
+}
 }
 
 
@@ -175,5 +214,16 @@
 
 .homepage-second .bnr-text h1 {
   font-size: 38px;
+}
+
+.banner_text h1 {
+  font-size: 2.6rem;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.banner_text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 }
