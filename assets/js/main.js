@@ -41,26 +41,119 @@ document.querySelectorAll('.custom-btn').forEach(btn => {
 
 // Form validation functions
 function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   return re.test(email);
 }
 
 function validatePassword(password) {
-  return password.length >= 6;
+  // Password must be at least 8 characters, contain at least one uppercase, one lowercase, and one number
+  const hasMinLength = password.length >= 8;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumbers = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  
+  return {
+    isValid: hasMinLength && hasUpperCase && hasLowerCase && hasNumbers,
+    hasMinLength,
+    hasUpperCase,
+    hasLowerCase,
+    hasNumbers,
+    hasSpecialChar
+  };
+}
+
+function validateName(name) {
+  // Name must be at least 2 characters, only letters, spaces, hyphens, and apostrophes
+  const re = /^[a-zA-Z\s\-']{2,50}$/;
+  return re.test(name.trim());
 }
 
 function showError(inputId, errorId, message) {
   const input = document.getElementById(inputId);
   const error = document.getElementById(errorId);
-  input.classList.add('is-invalid');
-  error.textContent = message;
+  if (input && error) {
+    input.classList.add('is-invalid');
+    input.classList.remove('is-valid');
+    input.style.borderColor = '#dc3545';
+    input.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+    error.textContent = message;
+    error.style.color = '#dc3545';
+    error.style.fontSize = '0.875rem';
+    error.style.marginTop = '0.25rem';
+    error.style.display = 'block';
+  }
 }
 
 function clearError(inputId, errorId) {
   const input = document.getElementById(inputId);
   const error = document.getElementById(errorId);
-  input.classList.remove('is-invalid');
-  error.textContent = '';
+  if (input && error) {
+    input.classList.remove('is-invalid');
+    input.classList.add('is-valid');
+    input.style.borderColor = '#28a745';
+    input.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+    error.textContent = '';
+    error.style.display = 'none';
+  }
+}
+
+function showSuccess(inputId, errorId, message) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(errorId);
+  if (input && error) {
+    input.classList.add('is-valid');
+    input.classList.remove('is-invalid');
+    input.style.borderColor = '#28a745';
+    input.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+    error.textContent = message;
+    error.style.color = '#28a745';
+    error.style.fontSize = '0.875rem';
+    error.style.marginTop = '0.25rem';
+    error.style.display = 'block';
+  }
+}
+
+function isFormValid(formType) {
+  if (formType === 'login') {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    return email && validateEmail(email) && password && password.length >= 6;
+  } else if (formType === 'signup') {
+    const name = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const passwordValidation = validatePassword(password);
+    
+    return name && validateName(name) && 
+           email && validateEmail(email) && 
+           password && passwordValidation.isValid && 
+           confirmPassword && password === confirmPassword;
+  }
+  return false;
+}
+
+function updateSubmitButton(formType) {
+  const isValid = isFormValid(formType);
+  let submitButton;
+  
+  if (formType === 'login') {
+    submitButton = document.querySelector('#loginForm button[type="submit"]');
+  } else if (formType === 'signup') {
+    submitButton = document.querySelector('#signupForm button[type="submit"]');
+  }
+  
+  if (submitButton) {
+    submitButton.disabled = !isValid;
+    if (isValid) {
+      submitButton.style.opacity = '1';
+      submitButton.style.cursor = 'pointer';
+    } else {
+      submitButton.style.opacity = '0.6';
+      submitButton.style.cursor = 'not-allowed';
+    }
+  }
 }
 
 // Login form validation
@@ -91,7 +184,7 @@ loginFormEl.addEventListener('submit', function(e) {
   if (!password) {
     showError('loginPassword', 'loginPasswordError', 'Password is required');
     isValid = false;
-  } else if (!validatePassword(password)) {
+  } else if (password.length < 6) {
     showError('loginPassword', 'loginPasswordError', 'Password must be at least 6 characters');
     isValid = false;
   }
@@ -101,6 +194,10 @@ loginFormEl.addEventListener('submit', function(e) {
     alert('Login successful! Welcome to Rush Play Game!');
     if(loginModal){loginModal.hide();}
     this.reset();
+  } else {
+    // Prevent form submission and show general error message
+    e.preventDefault();
+    alert('Please fix the errors above before submitting the form.');
   }
 });
 }
@@ -133,8 +230,8 @@ signupFormEl.addEventListener('submit', function(e) {
   if (!name) {
     showError('signupName', 'signupNameError', 'Full name is required');
     isValid = false;
-  } else if (name.length < 2) {
-    showError('signupName', 'signupNameError', 'Name must be at least 2 characters');
+  } else if (!validateName(name)) {
+    showError('signupName', 'signupNameError', 'Name must be 2-50 characters and contain only letters, spaces, hyphens, and apostrophes');
     isValid = false;
   }
 
@@ -151,9 +248,18 @@ signupFormEl.addEventListener('submit', function(e) {
   if (!password) {
     showError('signupPassword', 'signupPasswordError', 'Password is required');
     isValid = false;
-  } else if (!validatePassword(password)) {
-    showError('signupPassword', 'signupPasswordError', 'Password must be at least 6 characters');
-    isValid = false;
+  } else {
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.isValid) {
+      let errorMessage = 'Password must contain:';
+      if (!passwordValidation.hasMinLength) errorMessage += ' at least 8 characters,';
+      if (!passwordValidation.hasUpperCase) errorMessage += ' one uppercase letter,';
+      if (!passwordValidation.hasLowerCase) errorMessage += ' one lowercase letter,';
+      if (!passwordValidation.hasNumbers) errorMessage += ' one number,';
+      errorMessage = errorMessage.slice(0, -1); // Remove last comma
+      showError('signupPassword', 'signupPasswordError', errorMessage);
+      isValid = false;
+    }
   }
 
   // Validate confirm password
@@ -176,21 +282,131 @@ signupFormEl.addEventListener('submit', function(e) {
     alert('Account created successfully! Welcome to Rush Play Game!');
     if(signupModal){signupModal.hide();}
     this.reset();
+  } else {
+    // Prevent form submission and show general error message
+    e.preventDefault();
+    alert('Please fix the errors above before submitting the form.');
   }
 });
 }
 
 // Real-time validation for signup form
-const confirmPasswordEl=document.getElementById('confirmPassword');
+const signupNameEl = document.getElementById('signupName');
+const signupEmailEl = document.getElementById('signupEmail');
+const signupPasswordEl = document.getElementById('signupPassword');
+const confirmPasswordEl = document.getElementById('confirmPassword');
+
+// Real-time validation for signup name
+if(signupNameEl){
+  signupNameEl.addEventListener('input', function() {
+    const name = this.value.trim();
+    if (name.length > 0) {
+      if (validateName(name)) {
+        showSuccess('signupName', 'signupNameError', '✓ Valid name');
+      } else {
+        showError('signupName', 'signupNameError', 'Name must be 2-50 characters and contain only letters, spaces, hyphens, and apostrophes');
+      }
+    } else {
+      clearError('signupName', 'signupNameError');
+    }
+    updateSubmitButton('signup');
+  });
+}
+
+// Real-time validation for signup email
+if(signupEmailEl){
+  signupEmailEl.addEventListener('input', function() {
+    const email = this.value.trim();
+    if (email.length > 0) {
+      if (validateEmail(email)) {
+        showSuccess('signupEmail', 'signupEmailError', '✓ Valid email');
+      } else {
+        showError('signupEmail', 'signupEmailError', 'Please enter a valid email address');
+      }
+    } else {
+      clearError('signupEmail', 'signupEmailError');
+    }
+    updateSubmitButton('signup');
+  });
+}
+
+// Real-time validation for signup password
+if(signupPasswordEl){
+  signupPasswordEl.addEventListener('input', function() {
+    const password = this.value;
+    if (password.length > 0) {
+      const passwordValidation = validatePassword(password);
+      if (passwordValidation.isValid) {
+        showSuccess('signupPassword', 'signupPasswordError', '✓ Strong password');
+      } else {
+        let errorMessage = 'Password must contain:';
+        if (!passwordValidation.hasMinLength) errorMessage += ' at least 8 characters,';
+        if (!passwordValidation.hasUpperCase) errorMessage += ' one uppercase letter,';
+        if (!passwordValidation.hasLowerCase) errorMessage += ' one lowercase letter,';
+        if (!passwordValidation.hasNumbers) errorMessage += ' one number,';
+        errorMessage = errorMessage.slice(0, -1); // Remove last comma
+        showError('signupPassword', 'signupPasswordError', errorMessage);
+      }
+    } else {
+      clearError('signupPassword', 'signupPasswordError');
+    }
+    updateSubmitButton('signup');
+  });
+}
+
+// Real-time validation for confirm password
 if(confirmPasswordEl){
   confirmPasswordEl.addEventListener('input', function() {
     const password = document.getElementById('signupPassword').value;
     const confirmPassword = this.value;
-    if (confirmPassword && password !== confirmPassword) {
-      showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
+    if (confirmPassword.length > 0) {
+      if (password === confirmPassword && password.length > 0) {
+        showSuccess('confirmPassword', 'confirmPasswordError', '✓ Passwords match');
+      } else {
+        showError('confirmPassword', 'confirmPasswordError', 'Passwords do not match');
+      }
     } else {
       clearError('confirmPassword', 'confirmPasswordError');
     }
+    updateSubmitButton('signup');
+  });
+}
+
+// Real-time validation for login form
+const loginEmailEl = document.getElementById('loginEmail');
+const loginPasswordEl = document.getElementById('loginPassword');
+
+// Real-time validation for login email
+if(loginEmailEl){
+  loginEmailEl.addEventListener('input', function() {
+    const email = this.value.trim();
+    if (email.length > 0) {
+      if (validateEmail(email)) {
+        showSuccess('loginEmail', 'loginEmailError', '✓ Valid email');
+      } else {
+        showError('loginEmail', 'loginEmailError', 'Please enter a valid email address');
+      }
+    } else {
+      clearError('loginEmail', 'loginEmailError');
+    }
+    updateSubmitButton('login');
+  });
+}
+
+// Real-time validation for login password
+if(loginPasswordEl){
+  loginPasswordEl.addEventListener('input', function() {
+    const password = this.value;
+    if (password.length > 0) {
+      if (password.length >= 6) {
+        showSuccess('loginPassword', 'loginPasswordError', '✓ Valid password');
+      } else {
+        showError('loginPassword', 'loginPasswordError', 'Password must be at least 6 characters');
+      }
+    } else {
+      clearError('loginPassword', 'loginPasswordError');
+    }
+    updateSubmitButton('login');
   });
 }
   
@@ -261,10 +477,10 @@ $('.home_games_slider').slick({
       }
   ],
   prevArrow: `<button class="slick-prev custom-arrow custom-prev" aria-label="Previous slide">
-                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#fcee0a" stroke-width="1.5" d="M31 71L1 35 31 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#45f882" stroke-width="1.5" d="M31 71L1 35 31 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>`,
   nextArrow: `<button class="slick-next custom-arrow custom-next" aria-label="Next slide">
-                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#fcee0a" stroke-width="1.5" d="M1 71l30-36L1 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                 <svg  viewBox="0 0 32 72" xmlns="http://www.w3.org/2000/svg"><path stroke="#45f882" stroke-width="1.5" d="M1 71l30-36L1 1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>`
 });
 // Slider JS End

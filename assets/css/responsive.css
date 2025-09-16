@@ -226,4 +226,21 @@
   font-size: 1.1rem;
   line-height: 1.5;
 }
+
+.ko-accordion-item-header {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.banner_section_home img {
+  bottom: 48px;
+  left: 25px;
+  opacity: 0.2;
+  width: 80px;
+  height: 80px;
+}
+
+.rush-play-text h2 {
+  font-size: 2rem;
+}
 }
