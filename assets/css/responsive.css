@@ -37,7 +37,7 @@
       width: 280px;
       height: 100%;
       padding: 80px 30px;
-      gap: 15px;
+      gap: 5px;
       transition: left .4s ease-in-out;
       z-index: 9999;
       border-right: 1px solid #333;

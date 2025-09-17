@@ -1979,3 +1979,9 @@ button[type="submit"]:not(:disabled) {
   max-width: 650px;
   margin: 0 auto;
 }
+
+.custom-btn.step-action-btn.aos-init.aos-animate:hover {
+  background: #28d170;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(50, 255, 136, 0.3);
+}
