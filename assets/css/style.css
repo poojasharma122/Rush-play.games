@@ -1661,7 +1661,7 @@ button.slick-next {
   fill: #45f882;
 }
 
-.need-help .custom-shape-divider-bottom-1757660682 .shape-fill{
+.need-help .custom-shape-divider-bottom-1757660682 .shape-fill {
   fill: #45f882;
 }
 
@@ -1687,15 +1687,15 @@ button.slick-next {
   width: 100%;
   background-color: rgba(0 0 0/60%);
   z-index: -1;
-  }
+}
 
-  .banner_text h1 {
-    font-size: 5rem;
-    color: #45f882;
-    line-height: 150%;
-    font-weight: 600;
-    margin-bottom: 30px;
-    display: block;
+.banner_text h1 {
+  font-size: 5rem;
+  color: #45f882;
+  line-height: 150%;
+  font-weight: 600;
+  margin-bottom: 30px;
+  display: block;
 }
 
 .banner_text {
@@ -1716,7 +1716,7 @@ button.slick-next {
 
 
 .banner_section_home .custom-shape-divider-bottom-1757660682 .shape-fill {
-  fill: #45f882; 
+  fill: #45f882;
 }
 
 .banner_text p {
@@ -1743,9 +1743,11 @@ button.slick-next {
   0% {
     transform: scale(1, 1);
   }
+
   50% {
     transform: scale(1.2, 1);
   }
+
   100% {
     transform: scale(1, 1);
   }
@@ -1762,13 +1764,14 @@ button.slick-next {
 }
 
 @keyframes animName {
-  0%{
-     transform: rotate(0deg);
-    }
- 100%{
-     transform: rotate(360deg);
-    }
- }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .banner_section_main {
   position: relative;
@@ -1785,9 +1788,17 @@ button.slick-next {
 }
 
 @keyframes floatMission {
-  0% { transform: translateY(0);}
-  50% { transform: translateY(-20px);}
-  100% { transform: translateY(0);}
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .rewards-grid-inner p {
@@ -1854,7 +1865,8 @@ button[type="submit"]:not(:disabled) {
 
 /* Success */
 .email-msg.success {
-  color: #28a745; /* Green */
+  color: #28a745;
+  /* Green */
   display: block;
 }
 
@@ -1877,3 +1889,66 @@ button[type="submit"]:not(:disabled) {
   outline: none;
 }
 
+
+
+/* our mission section css start */
+
+.our-mission-inner-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+}
+
+.our-mission-text {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 30px 40px 30px 40px;
+  height: 100%;
+}
+
+
+.our-mission-text h2 {
+  color: #45f882;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.our-mission-text p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+}
+
+/* our mission section css end */
+
+.looking-ahead-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.looking-ahead-title {
+  color: #45f882;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.looking-ahead-desc {
+  color: #ababab;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
