@@ -484,3 +484,56 @@ $('.home_games_slider').slick({
                 </button>`
 });
 // Slider JS End
+
+
+
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // stop form submission for validation
+  let isValid = true;
+
+  // Email validation
+  const email = document.getElementById("loginEmail");
+  const emailError = document.getElementById("loginEmailError");
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+
+  if (email.value.trim() === "") {
+    email.classList.add("is-invalid");
+    emailError.textContent = "Email is required.";
+    isValid = false;
+  } else if (!emailPattern.test(email.value.trim())) {
+    email.classList.add("is-invalid");
+    emailError.textContent = "Please enter a valid email address.";
+    isValid = false;
+  } else {
+    email.classList.remove("is-invalid");
+    email.classList.add("is-valid");
+    emailError.textContent = "";
+  }
+
+  // Password validation
+  const password = document.getElementById("loginPassword");
+  const passwordError = document.getElementById("loginPasswordError");
+
+  if (password.value.trim() === "") {
+    password.classList.add("is-invalid");
+    passwordError.textContent = "Password is required.";
+    isValid = false;
+  } else if (password.value.length < 6) {
+    password.classList.add("is-invalid");
+    passwordError.textContent = "Password must be at least 6 characters.";
+    isValid = false;
+  } else {
+    password.classList.remove("is-invalid");
+    password.classList.add("is-valid");
+    passwordError.textContent = "";
+  }
+
+  // If form is valid, you can submit or trigger AJAX
+  if (isValid) {
+    alert("Login successful! (You can replace this with real login logic)");
+    this.reset();
+    email.classList.remove("is-valid");
+    password.classList.remove("is-valid");
+  }
+});

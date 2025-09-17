@@ -349,40 +349,41 @@
 
 
   <!-- Login Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
-        <div class="modal-header" style="border-bottom: 1px solid #333;">
-          <h5 class="modal-title" id="loginModalLabel" style="color: #32ff88; font-family: 'Orbitron', monospace;">LOGIN
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-            style="filter: invert(1);"></button>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
+                <div class="text-center pt-3">
+                    <img src="assets/images/site-logo.png" alt="Logo" style="max-width: 120px; height: auto;">
+                </div>
+                <div class="modal-header justify-content-start" style="border-bottom: 1px solid #333;">
+                    <h5 class="modal-title" id="loginModalLabel"
+                        style="color: #32ff88; font-family: 'Orbitron', monospace;">LOGIN
+                    </h5>
+                    <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"
+                        aria-label="Close" style="filter: invert(1);">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label" style="color: #fff;">Email Address</label>
+                            <input type="email" class="form-control" id="loginEmail" required
+                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">                       
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label" style="color: #fff;">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required
+                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn"
+                                style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <form id="loginForm">
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label" style="color: #fff;">Email Address</label>
-              <input type="email" class="form-control" id="loginEmail" required
-                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-              <div class="invalid-feedback" id="loginEmailError"></div>
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label" style="color: #fff;">Password</label>
-              <input type="password" class="form-control" id="loginPassword" required
-                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-              <div class="invalid-feedback" id="loginPasswordError"></div>
-            </div>
-            
-            <div class="d-grid">
-              <button type="submit" class="btn"
-                style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">LOGIN</button>
-            </div>
-          </form>
-          
-        </div>
-      </div>
     </div>
-  </div>
 
   <!-- Signup Modal -->
   <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
