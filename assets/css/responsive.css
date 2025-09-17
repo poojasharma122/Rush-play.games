@@ -179,6 +179,10 @@
   margin: 0 10px;
 }
 
+.about-diff-img {
+  height: 400px;
+}
+
 }
 
 
@@ -259,5 +263,9 @@
 
 .rush-play-text h2 {
   font-size: 2rem;
+}
+
+.about-diff-img {
+  height: 300px;
 }
 }
