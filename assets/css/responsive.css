@@ -312,4 +312,12 @@ button.slick-next {
 .our-mission-inner-img {
   height: 320px;
 }
+
+.newslettr_wrap h4 {
+  font-size: 1.1rem;
+}
+
+.step-action-para {
+  font-size: 1.1rem;
+}
 }
