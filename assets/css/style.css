@@ -1740,7 +1740,17 @@ button.slick-next {
   bottom: 33px;
   left: 47px;
   opacity: 0.2;
+  animation: animName 5s linear infinite;
 }
+
+@keyframes animName {
+  0%{
+     transform: rotate(0deg);
+    }
+ 100%{
+     transform: rotate(360deg);
+    }
+ }
 
 .banner_section_main {
   position: relative;
@@ -1753,6 +1763,13 @@ button.slick-next {
   opacity: 0.1;
   width: 100px;
   height: 100px;
+  animation: floatMission 3s ease-in-out infinite;
+}
+
+@keyframes floatMission {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-20px);}
+  100% { transform: translateY(0);}
 }
 
 .rewards-grid-inner p {
