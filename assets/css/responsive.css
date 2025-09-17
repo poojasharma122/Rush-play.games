@@ -146,13 +146,13 @@
 
 .home_games_slider {
   position: relative;
-  padding-bottom: 3.5rem;
+  /* padding-bottom: 3.5rem; */
   width: 100%;
 }
 
 .slick-prev svg, .slick-next svg {
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .banner_section_right {
@@ -172,15 +172,21 @@
 
 .home_games_slider .slick-arrow {
   position: absolute !important;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  left: 42%;
+  bottom: -170px;
+  transform: unset;
   display: inline-block;
   margin: 0 10px;
 }
 
 .about-diff-img {
   height: 400px;
+}
+
+button.slick-next {
+  right: 42%;
+  z-index: 1;
+  left: unset!important;
 }
 
 }
@@ -205,12 +211,20 @@
 } 
 
 .slick-prev svg, .slick-next svg {
-  width: 3rem;
-  height: 3rem;
-}
+  width: 2rem;
+  height: 2rem;
+} 
 
 .banner_section_right {
   height: 370px;
+}
+
+button.slick-next {
+  right: 35%;
+}
+
+.home_games_slider .slick-arrow {
+  left: 35%;
 }
 }
 

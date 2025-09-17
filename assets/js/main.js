@@ -465,7 +465,7 @@ $('.home_games_slider').slick({
               slidesToShow: 2,
               slidesToScroll: 1,
               infinite: true,
-              dots: true
+              dots: false
           }
       },
       {
