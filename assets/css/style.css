@@ -564,16 +564,17 @@ h2.heading-bar {
 
 
 /* newsletter section css start */
-
+/* Newsletter Section Background */
 .newsletter_sec {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(0 0 0/80%);
+  background-color: rgba(0 0 0 / 80%);
   background-blend-mode: multiply;
   background-image: url(../images/footer-img.jpg);
 }
 
+/* Headings */
 .section_heading {
   color: #fff;
   font-size: 32px;
@@ -581,15 +582,7 @@ h2.heading-bar {
   font-weight: 700;
 }
 
-/* .titlepage span.underline {
-    border: #008080 solid 1px;
-    width: 100%;
-    max-width: 24.25rem;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-} */
-
+/* Newsletter Text */
 .newslettr_wrap h4 {
   font-size: 1.2rem;
   max-width: 56.25rem;
@@ -597,6 +590,7 @@ h2.heading-bar {
   color: #fff;
 }
 
+/* Input Box */
 .newsletter_input_box {
   display: flex;
   align-items: center;
@@ -604,10 +598,6 @@ h2.heading-bar {
   border-bottom: 2px solid #2eff88;
   max-width: 37.5rem;
   margin: 3.125rem auto 1.25rem auto;
-}
-
-.newsletter_input_box ::placeholder {
-  color: #fff;
 }
 
 .newsletter_input_box input {
@@ -618,7 +608,11 @@ h2.heading-bar {
   background: transparent;
   padding: 0.625rem;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.newsletter_input_box ::placeholder {
+  color: #aaa;
 }
 
 span.input_msg {
@@ -630,6 +624,37 @@ span.input_msg {
   margin-right: 10px;
   display: inline-block;
   min-width: 1.5625rem;
+}
+
+/* Validation Message */
+.email-msg {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  display: none;
+}
+
+.email-msg.error {
+  color: #ff4d4d;
+  display: block;
+  font-weight: 500;
+}
+
+.email-msg.success {
+  color: #32ff88;
+  display: block;
+  font-weight: 600;
+}
+
+.email-msg.error {
+  display: block;
+  background: #ffffff;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 6px 15px;
+  position: absolute;
+  top: 50px;
+  font-size: 13px;
+  border-radius: 5px;
 }
 
 
@@ -744,6 +769,8 @@ span.input_msg {
 }
 
 /* faqs section css end */
+
+
 
 /* footer css start */
 
@@ -1736,7 +1763,7 @@ button.slick-next {
   background-size: contain;
   width: 100%;
   height: 450px;
-  animation: zoom-in-zoom-out 2s ease-out infinite;
+  /* animation: zoom-in-zoom-out 2s ease-out infinite; */
 }
 
 @keyframes zoom-in-zoom-out {
