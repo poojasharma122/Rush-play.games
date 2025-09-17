@@ -302,57 +302,57 @@
     <!-- Signup Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
-                <div class="modal-header" style="border-bottom: 1px solid #333;">
-                    <h5 class="modal-title" id="signupModalLabel"
-                        style="color: #32ff88; font-family: 'Orbitron', monospace;">SIGN UP</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        style="filter: invert(1);"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="signupForm">
-                        <div class="mb-3">
-                            <label for="signupName" class="form-label" style="color: #fff;">Full Name</label>
-                            <input type="text" class="form-control" id="signupName" required
-                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-                            <div class="invalid-feedback" id="signupNameError"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupEmail" class="form-label" style="color: #fff;">Email Address</label>
-                            <input type="email" class="form-control" id="signupEmail" required
-                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-                            <div class="invalid-feedback" id="signupEmailError"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupPassword" class="form-label" style="color: #fff;">Password</label>
-                            <input type="password" class="form-control" id="signupPassword" required
-                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-                            <div class="invalid-feedback" id="signupPasswordError"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirmPassword" class="form-label" style="color: #fff;">Confirm
-                                Password</label>
-                            <input type="password" class="form-control" id="confirmPassword" required
-                                style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
-                            <div class="invalid-feedback" id="confirmPasswordError"></div>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="agreeTerms" required
-                                style="background: #1a1a1a; border: 1px solid #333;">
-                            <label class="form-check-label" for="agreeTerms" style="color: #fff;">I agree to the <a
-                                    href="#" style="color: #32ff88;">Terms and Conditions</a></label>
-                            <div class="invalid-feedback" id="agreeTermsError"></div>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn"
-                                style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">SIGN
-                                UP</button>
-                        </div>
-                    </form>
-                </div>
+          <div class="modal-content" style="background: #2a2a2a; border: 1px solid #333;">
+      
+            <!-- Logo on Top -->
+            <div class="text-center pt-3">
+              <img src="assets/images/site-logo.png" alt="Logo" 
+                   style="max-width: 120px; height: auto;">
             </div>
+      
+            <!-- Header -->
+            <div class="modal-header justify-content-start" style="border-bottom: 1px solid #333;">
+              <h5 class="modal-title" id="signupModalLabel"
+                  style="color: #32ff88; font-family: 'Orbitron', monospace;">SIGN UP</h5>
+              <button type="button" class="btn-close position-absolute end-0 me-3" 
+                      data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+            </div>
+      
+            <!-- Body -->
+            <div class="modal-body">
+              <form id="signupForm">
+                <div class="mb-3">
+                  <label for="signupName" class="form-label" style="color: #fff;">Full Name</label>
+                  <input type="text" class="form-control" id="signupName" required
+                         style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label" style="color: #fff;">Email Address</label>
+                  <input type="email" class="form-control" id="signupEmail" required
+                         style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label" style="color: #fff;">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" required
+                         style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+                </div>
+                <div class="mb-3">
+                  <label for="confirmPassword" class="form-label" style="color: #fff;">Confirm Password</label>
+                  <input type="password" class="form-control" id="confirmPassword" required
+                         style="background: #1a1a1a; border: 1px solid #333; color: #fff;">
+                </div>
+      
+                <div class="d-grid">
+                  <button type="submit" class="btn"
+                          style="background: #32ff88; color: #000; font-weight: bold; border: none; padding: 12px;">
+                    SIGN UP
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
 
 
