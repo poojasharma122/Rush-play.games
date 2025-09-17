@@ -163,6 +163,22 @@
   font-size: 3.2rem;
 }
 
+.home_games_slider .slick-prev {
+  left: 50%;
+  right: auto;
+  bottom: -140px;
+  transform: translateX(-120%);
+}
+
+.home_games_slider .slick-arrow {
+  position: absolute !important;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: inline-block;
+  margin: 0 10px;
+}
+
 }
 
 
