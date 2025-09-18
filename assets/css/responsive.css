@@ -320,4 +320,13 @@ button.slick-next {
 .step-action-para {
   font-size: 1.1rem;
 }
+
+.need-help-inner h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.pbmit-title-wrap h2 {
+  font-size: 22px;
+}
 }
