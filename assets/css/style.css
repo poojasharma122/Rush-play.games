@@ -1930,6 +1930,7 @@ button[type="submit"]:not(:disabled) {
   color: #28a745;
   /* Green */
   display: block;
+  margin-bottom: 0;
 }
 
 /* Error */
