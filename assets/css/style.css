@@ -653,7 +653,7 @@ span.input_msg {
   font-weight: 600;
 }
 
-.email-msg.error {
+/* .email-msg.error {
   display: block;
   background: #ffffff;
   width: fit-content;
@@ -663,6 +663,19 @@ span.input_msg {
   top: 50px;
   font-size: 13px;
   border-radius: 5px;
+} */
+
+.email-msg.error {
+  display: block;
+  background: #ffffff;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 6px 15px;
+  position: absolute;
+  top: 148px;
+  font-size: 13px;
+  border-radius: 5px;
+  left: 28%;
 }
 
 
@@ -2001,5 +2014,10 @@ button[type="submit"]:not(:disabled) {
 }
 
 .rush-edge-section .figma_heading {
+  line-height: 1;
+}
+
+
+.about-diff .figma_heading{
   line-height: 1;
 }

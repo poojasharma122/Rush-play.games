@@ -13,6 +13,11 @@
     line-height: 1.4;
   }
 
+  .email-msg.error {
+    top: 135px;
+    left: 20%;
+}
+
 }
 
 @media screen and (max-width: 991px) {
@@ -122,6 +127,11 @@
   font-size: 4rem;
 }
 
+.email-msg.error {
+  top: 135px;
+  left: 17%;
+}
+
 }
 
 
@@ -198,6 +208,15 @@ button.slick-next {
 .looking-ahead-desc {
   font-size: 1.05rem;
 }
+
+.email-msg.error {
+  top: 135px;
+  left: 0%;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+
 
 }
 
