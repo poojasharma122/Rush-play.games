@@ -1854,7 +1854,7 @@ button.slick-next {
 }
 
 .rush-edge-heading h2 {
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 /* Form validation styles */
@@ -1998,4 +1998,8 @@ button[type="submit"]:not(:disabled) {
   background: #28d170;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(50, 255, 136, 0.3);
+}
+
+.rush-edge-section .figma_heading {
+  line-height: 1;
 }
