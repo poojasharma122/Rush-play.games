@@ -2021,3 +2021,7 @@ button[type="submit"]:not(:disabled) {
 .about-diff .figma_heading{
   line-height: 1;
 }
+
+.rush-edge-section-player .figma_heading {
+  line-height: 1;
+}
