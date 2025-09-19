@@ -2025,3 +2025,15 @@ button[type="submit"]:not(:disabled) {
 .rush-edge-section-player .figma_heading {
   line-height: 1;
 }
+
+.our-mission-para {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 48px;
+  letter-spacing: 0.8px;
+}
