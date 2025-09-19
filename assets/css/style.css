@@ -500,6 +500,14 @@ h2.heading-bar {
   padding-left: 30px;
 }
 
+.rush-play-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+}
+
 .rush-play-text ul li p::before {
   position: absolute;
   content: '.';
@@ -976,7 +984,7 @@ section.inner-bnr {
   line-height: 28px;
   color: #fff;
   position: relative;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   padding-left: 20px;
 }
 
@@ -1145,7 +1153,7 @@ textarea#message {
   font-weight: 400;
   line-height: normal;
   padding: 10px 20px;
-  color: #ffffffcc;
+  color: #000;
   border: 1px solid #cdf7ff1a;
   border-radius: 0;
   -webkit-transition: all .5s ease;
@@ -1964,7 +1972,7 @@ button[type="submit"]:not(:disabled) {
 .looking-ahead-inner {
   max-width: 800px;
   margin: 0 auto;
-  padding: 48px 24px 40px 24px;
+  /* padding: 48px 24px 40px 24px; */
   display: flex;
   flex-direction: column;
   align-items: center;
