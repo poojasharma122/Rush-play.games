@@ -605,8 +605,12 @@ h2.heading-bar {
   align-items: center;
   justify-content: center;
   max-width: 37.5rem;
-  margin: 3.125rem auto 1.25rem auto;
+  margin: 3.125rem auto 0 auto;
   position: relative;
+}
+
+.explore-button {
+  margin: 1rem 0 0;
 }
 
 .newsletter_input_box input {
@@ -656,6 +660,7 @@ span.input_msg {
   color: #ff4d4d;
   display: block;
   font-weight: 500;
+  margin-bottom: 0;
 
 }
 
