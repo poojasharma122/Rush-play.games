@@ -601,11 +601,12 @@ h2.heading-bar {
 /* Input Box */
 .newsletter_input_box {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid #2eff88;
   max-width: 37.5rem;
   margin: 3.125rem auto 1.25rem auto;
+  position: relative;
 }
 
 .newsletter_input_box input {
@@ -617,6 +618,8 @@ h2.heading-bar {
   padding: 0.625rem;
   color: #fff;
   font-size: 1.2rem;
+  border-bottom: 2px solid #2eff88;
+  padding-left: 40px;
 }
 
 .newsletter_input_box ::placeholder {
@@ -633,11 +636,19 @@ span.input_msg {
   display: inline-block;
   min-width: 1.5625rem;
 }
+span.input_msg {
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
 
 /* Validation Message */
 .email-msg {
   font-size: 0.95rem;
   margin-top: 10px;
+  border-radius: 5px;
+  padding: 6px 15px;
+  background: #ffffff;
   display: none;
 }
 
@@ -645,6 +656,7 @@ span.input_msg {
   color: #ff4d4d;
   display: block;
   font-weight: 500;
+
 }
 
 .email-msg.success {
@@ -667,15 +679,6 @@ span.input_msg {
 
 .email-msg.error {
   display: block;
-  background: #ffffff;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 6px 15px;
-  position: absolute;
-  top: 148px;
-  font-size: 13px;
-  border-radius: 5px;
-  left: 28%;
 }
 
 
