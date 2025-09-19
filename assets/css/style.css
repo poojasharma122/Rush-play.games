@@ -1021,7 +1021,8 @@ section.inner-bnr {
   line-height: 25px;
   max-width: 600px;
   margin-bottom: 20px;
-}
+  margin: 0 auto;
+}         
 
 .homepage-second::after {
   content: "";
@@ -1120,6 +1121,10 @@ section.inner-bnr {
 
 .pbmit-content-wrapper.pbmit-content-wrapper p a {
   color: #32ff88;
+}
+
+.pbmit-content-wrapper.pbmit-content-wrapper p a:hover {
+  color: #fff;
 }
 
 
@@ -1375,7 +1380,8 @@ section.rush-edge-section-player .benefit-card figure img {
   border: 1px solid #262a33;
   border-radius: 16px;
   padding: 20px;
-  height: 100%
+  height: 100%;
+  border-color: #2eff88;
 }
 
 .rw-card.highlight {
